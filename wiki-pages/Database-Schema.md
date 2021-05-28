@@ -38,6 +38,7 @@
 | genreId       | integer   | foreign key           |
 | publisherId   | integer   | foreign key           |
 | platforms     | text      | not null              |
+| imageSrc      | string    | not null              |
 | releaseDate   | date      | not null              |
 | created_at    | datetime  | not null              |
 | updated-at    | datetime  | not null              |
