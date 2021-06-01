@@ -1,0 +1,7 @@
+extends layout
+
+include utils
+
+block content
+    form(action= '/user/signup' method='post')
+        input(type='hidden' name='_csrf' value=csrfToken)
