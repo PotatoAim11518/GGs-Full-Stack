@@ -18,13 +18,13 @@ router.get('users/signup', csrfProtection, (req, res, next)=> {
 });
 
 router.post('/users/signup', csrfProtection, asyncHandler(async(req, res, next) => {
-  const {emailAddress,firstName,lastName,hashedPassword} = req.body;
+  const {email,username,firstName,lastName,hashedPassword} = req.body;
 
   const user = db.User.build({
+    email,
     username,
     firstName,
     lastName,
-    email,
     hashedPassword
   });
 

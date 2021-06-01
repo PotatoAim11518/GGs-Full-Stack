@@ -5,3 +5,15 @@ include utils
 block content
     form(action= '/user/signup' method='post')
         input(type='hidden' name='_csrf' value=csrfToken)
+            +field('Email Address', 'email', user.email)
+            +field('First Name', 'firstName', user.firstName)
+            +field('Last Name', 'lastName', user.lastName)
+            +field('Password', 'hashedPassword', user.hashedPassword, 'password')
+            +field('Confirm Password', 'confirmPassword', '', 'password')
+            div
+                button(type='submit' class='signup-button') Sign-Up!
+                a(href='/') Cancel
+                a(href='/login') Already a User? Login
+    
+               
+                
