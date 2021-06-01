@@ -27,6 +27,9 @@ router.post('/users/signup', csrfProtection, asyncHandler(async(req, res, next) 
     lastName,
     hashedPassword
   });
+  res.render('user-signup',{
+    title
+  })
 
 }))
 
