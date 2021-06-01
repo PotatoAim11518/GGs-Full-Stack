@@ -21,12 +21,12 @@ const loginValidators = [
 ]
 
 // GET /users/login
-router.get('/login', csrfProtection, loginValidators, asyncHandler( (res, req) => {
-  res.render('login', { title: 'Login', csrfToken = req.csrfToken() });
+router.get('/login', csrfProtection, loginValidators, asyncHandler(async (res, req) => {
+  res.render('login', { title: 'Login', csrfToken: req.csrfToken() });
 }));
 
 // POST /users/login
-router.post('/login', csrfProtection, loginValidators, asyncHandler( (res, req) => {
+router.post('/login', csrfProtection, loginValidators, asyncHandler(async (res, req) => {
   const { username, password } = req.body; // pulls the input data out of the request
   const user = await User.findOne({ where: { username } }); // tries to find the user in the database
 
