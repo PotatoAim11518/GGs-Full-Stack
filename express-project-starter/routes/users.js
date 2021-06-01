@@ -59,4 +59,10 @@ router.get('/', function(req, res, next) {
   res.send('respond with a resource');
 });
 
+// Added logoutUser
+router.post('/user/logout', (req, res) => {
+  logoutUser(req, res);
+  res.redirect('/');
+});
+
 module.exports = router;
