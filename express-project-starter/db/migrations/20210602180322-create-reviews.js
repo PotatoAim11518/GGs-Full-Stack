@@ -9,13 +9,17 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       userId: {
-        type: Sequelize.INTEGER
+        allowNull: false,
+        type: Sequelize.INTEGER,
+        references: {model: "Users"}
       },
       content: {
+        allowNull: false,
         type: Sequelize.TEXT
       },
       rating: {
-        type: Sequelize.NUMERIC
+        default: null,
+        type: Sequelize.NUMERIC(2,1)
       },
       createdAt: {
         allowNull: false,
