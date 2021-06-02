@@ -31,7 +31,7 @@ const restoreUser = async (req, res, next) => {
    }
 }
 
-// checks 
+// checks
 const authUser = (req, res, next) => {
    if (!res.locals.authenticated) {
       return res.redirect('/user/login')
@@ -39,9 +39,9 @@ const authUser = (req, res, next) => {
    return next();
 };
 
-module.experts = {
+module.exports = {
    loginUser,
    logoutUser,
    restoreUser,
-   authUser,
+   authUser
 };
