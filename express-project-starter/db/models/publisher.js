@@ -5,6 +5,7 @@ module.exports = (sequelize, DataTypes) => {
   }, {});
   Publisher.associate = function(models) {
     // associations can be defined here
+    //publisher has many games
   };
   return Publisher;
 };
