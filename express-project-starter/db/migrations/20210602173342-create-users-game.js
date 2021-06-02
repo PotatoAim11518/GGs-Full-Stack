@@ -16,12 +16,6 @@ module.exports = {
           model: "Games"
         }
       },
-      reviewId: {
-        type: Sequelize.INTEGER,
-        references: {
-          model: "Reviews"
-        }
-      },
       userId: {
         allowNull: false,
         type: Sequelize.INTEGER,

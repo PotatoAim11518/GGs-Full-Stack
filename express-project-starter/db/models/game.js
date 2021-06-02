@@ -6,7 +6,7 @@ module.exports = (sequelize, DataTypes) => {
     genreId: DataTypes.INTEGER,
     publisherId: DataTypes.INTEGER,
     platforms: DataTypes.TEXT,
-    imagSrc: DataTypes.STRING,
+    imageSrc: DataTypes.STRING,
     releaseDate: DataTypes.DATE
   }, {});
   Game.associate = function(models) {
