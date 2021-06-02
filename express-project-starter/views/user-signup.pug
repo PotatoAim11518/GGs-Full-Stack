@@ -3,18 +3,22 @@ extends layout
 include utils.pug
 
 block content
-    form(action= '/user/signup' method='post')
-        input(type='hidden' name='_csrf' value=csrfToken)
-            +field('User Name', 'username', user.username)
-            +field('First Name', 'firstName', user.firstName)
-            +field('Last Name', 'lastName', user.lastName)
-            +field('Email Address', 'email', user.email)
-            +field('Password', 'hashedPassword', user.hashedPassword, 'password')
-            +field('Confirm Password', 'confirmPassword', '', 'password')
-            div
-                button(type='submit' class='signup-button') Sign-Up!
-                a(href='/') Cancel
-                a(href='/login') Already a User? Login
-    
-               
-                
+    div(class="sign-up")
+        div(class="sign-up-errors")
+        h2 Sign Up
+            form(action= '/user/signup' method='post' class='sign-up-form')
+                input(type='hidden' name='_csrf' value=csrfToken)
+                    +field('User Name', 'username', user.username)
+                    +field('First Name', 'firstName', user.firstName)
+                    +field('Last Name', 'lastName', user.lastName)
+                    +field('Email Address', 'email', user.email)
+                    +field('Password', 'hashedPassword', user.hashedPassword, 'password')
+                    +field('Confirm Password', 'confirmPassword', '', 'password')
+                    div
+                        button(type='submit' class='signup-button') Sign-Up!
+                        a(href='/') Cancel
+                        a(href='/login') Already have an account? Log in here.
+            script(src='../sign-up.js')
+            
+                    
+                    
