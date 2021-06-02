@@ -10,6 +10,7 @@ module.exports = {
       },
       gameId: {
         allowNull: false,
+        unique: true,
         type: Sequelize.INTEGER,
         references: {
           model: "Games"
