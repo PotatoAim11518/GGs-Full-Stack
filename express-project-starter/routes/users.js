@@ -1,8 +1,12 @@
 const express = require('express');
-const { check , validationResult} = require('express-validator')
-const db = require('../db/models')
-const { csrfProtection, asyncHandler} = require('./utils')
 const bcrypt = require('bcryptjs');
+const { check , validationResult} = require('express-validator')
+
+const db = require('../db/models')
+
+const { loginUser, logoutUser } = require('../auth');
+const { csrfProtection, asyncHandler} = require('./utils')
+
 const router = express.Router();
 
 // Login validators
@@ -36,8 +40,8 @@ router.post('/login', csrfProtection, loginValidators, asyncHandler(async (res, 
       const passwordMatch = bcrypt.compare(password, user.hashedPassword); // compare the password provided with the stored hashedPassword in the db tied to the user
 
       if (passwordMatch) { // ...and if the password matches the hash
-        // log the user in
-        return res.redirect('/')
+        loginUser(req, res, user); // log the user in
+        return res.redirect('/');
       }
     }
     errors.push('Login failed for provided username and password.'); // otherwise log an error that the credentials failed
@@ -54,7 +58,9 @@ router.post('/login', csrfProtection, loginValidators, asyncHandler(async (res, 
       errors,
     });
 }));
-router.get('/users/signup', csrfProtection, (req, res, next)=> {
+
+// GET /users/signup
+router.get('/signup', csrfProtection, (req, res, next)=> {
   const user = db.User.build();
   res.render('user-signup',{ title: "New User Sign Up",
   user,
@@ -114,7 +120,8 @@ const signUpUserValidators = [
 
 ];
 
-router.post('/users/signup', csrfProtection, signUpUserValidators, asyncHandler(async(req, res, next) => {
+// POST /users/signup
+router.post('/signup', csrfProtection, signUpUserValidators, asyncHandler(async(req, res, next) => {
   const {email,username,firstName,lastName,hashedPassword} = req.body;
 
   const user = db.User.build({
@@ -139,7 +146,13 @@ router.post('/users/signup', csrfProtection, signUpUserValidators, asyncHandler(
     })
   }
 
-}))
+}));
+
+// POST /users/logout
+router.post('/logout', (req, res) => {
+  logoutUser(req, res);
+  res.redirect('/login');
+})
 
 
 module.exports = router;
