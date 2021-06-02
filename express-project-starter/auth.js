@@ -1,52 +1,47 @@
-const db = require('./db/models');
+const { User } = require('./db/models');
 
 const loginUser = (req, res, user) => {
-   req.session.auth = {
-      userId: user.id,
+   req.session.auth = {  // sets an auth property on the session object with the id of the passed in user
+      userId: user.id
    };
 };
 
-const logoutUser = (req, res) => {
-   delete req.session.auth;
-};
+const logoutUser = (req, res, next) => {
+   delete req.session.auth; // removes the session auth object
+}
 
-const requireAuth = (req, res, next) => {
+const restoreUser = async (req, res, next) => {
+   if (req.session.auth) {
+      const { userId } = req.session.auth; // pulls out the userId from the req
+
+      try {
+         const user = await User.findByPk(userId); // looks for the user in our db
+         if (user) { // if the user is found...
+            res.locals.authenticated = true; // ...set auth to true
+            res.locals.user = user; // ...set who the user is with the query object
+            next();
+         }
+      } catch (e) {
+         res.locals.authenticated = false; // errors result in no auth
+         next(e); //  error passed into next middleware
+      }
+   } else {
+      res.locals.authenticated = false; // sets auth to false if the user isn't logged in (no session auth)
+      next();
+   }
+}
+
+// checks 
+const authUser = (req, res, next) => {
    if (!res.locals.authenticated) {
-      return res.redirect('/user/login');
+      return res.redirect('/user/login')
    }
    return next();
 };
 
-const restoreUser = async (req, res, next) => {
-   console.log(req.session);
-
-   if (req.session.auth) {
-      const {
-         userId
-      } = req.session.auth;
-
-      try {
-         const user = await db.User.findByPk(userId);
-
-         if (user) {
-            res.locals.authenticated = true;
-            res.locals.user = user;
-            next();
-         }
-      } catch (err) {
-         res.locals.authenticated = false;
-         next(err);
-      }
-   } else {
-      res.locals.authenticated = false;
-      next();
-   }
-};
-
-
-module.exports = {
+module.experts = {
    loginUser,
    logoutUser,
-   requireAuth,
    restoreUser,
+   authUser,
 };
