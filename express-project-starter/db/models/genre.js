@@ -5,6 +5,7 @@ module.exports = (sequelize, DataTypes) => {
   }, {});
   Genre.associate = function(models) {
     // associations can be defined here
+    //genre has many games
   };
   return Genre;
 };
