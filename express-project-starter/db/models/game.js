@@ -18,7 +18,7 @@ module.exports = (sequelize, DataTypes) => {
     //game has many reviews
     Game.hasMany(models.Reviews, { foreignKey: 'gameId'});
 
-     //usersgames 
+     //usersgames
      const columnMapping = {
       through: 'UsersGame',
       otherKey: 'userId',
@@ -28,4 +28,4 @@ module.exports = (sequelize, DataTypes) => {
   };
   };
   return Game;
-};
+
