@@ -10,6 +10,7 @@ module.exports = (sequelize, DataTypes) => {
   }, {});
   UsersGame.associate = function(models) {
     // associations can be defined here
+    // UsersGame.belongsTo(models., { foreignKey: ''});
   };
   return UsersGame;
 };

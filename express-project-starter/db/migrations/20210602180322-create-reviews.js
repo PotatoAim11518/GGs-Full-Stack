@@ -13,6 +13,11 @@ module.exports = {
         type: Sequelize.INTEGER,
         references: {model: "Users"}
       },
+      gameId: {
+        allowNull: false,
+        type: Sequelize.INTEGER,
+        references: {model: "Games"}
+      },
       content: {
         allowNull: false,
         type: Sequelize.TEXT
