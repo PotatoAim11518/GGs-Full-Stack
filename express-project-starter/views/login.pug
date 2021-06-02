@@ -1,20 +1,23 @@
-extends layout.pug
-
-include error.pug
-
-block content
-form(action="/users/login", method="post")#login-form
-  input(type="hidden", name="_csrf", value=csrfToken)
-  div
-    label(for="username") Username
-  div
-    input(type="text", value="username", placeholder="Username")
-  div
-    label(for="password") Password
-  div
-    input(type="password", value="password", placeholder="Password")
-  div
-    button(type="submit") Login
-div
-  p: a(href='/users/signup') New to GGs? Sign up here!
-script(src="javascripts/login.js")
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(http-equiv="X-UA-Compatible", content="IE=edge")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    title Login
+  body
+    form(action="/users/login", method="post")#login-form
+      input(type="hidden", name="_csrf", value=csrfToken)
+      div
+        label(for="username") Username
+      div
+        input(type="text", value="username", placeholder="Username")
+      div
+        label(for="password") Password
+      div
+        input(type="password", value="password", placeholder="Password")
+      div
+        button(type="submit") Login
+    div
+      p: a(href='/users/signup') New to GGs? Sign up here!
+    script(src="javascripts/login.js")

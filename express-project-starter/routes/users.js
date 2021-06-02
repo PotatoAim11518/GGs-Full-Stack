@@ -16,16 +16,16 @@ const loginValidators = [
     .withMessage('Please enter a username.'),
   check('password')
     .exists({ checkFalsy: true} )
-    .withMessage('Please enter a password.'),
+    .withMessage('Please enter a password.')
 ]
 
 // GET /users/login
-router.get('/login', csrfProtection, loginValidators, asyncHandler(async (res, req) => {
+router.get('/login', csrfProtection, asyncHandler(async (req, res) => {
   res.render('login', { title: 'Login', csrfToken: req.csrfToken() });
 }));
 
 // POST /users/login
-router.post('/login', csrfProtection, loginValidators, asyncHandler(async (res, req) => {
+router.post('/login', csrfProtection, loginValidators, asyncHandler(async (req, res) => {
   const { username, password } = req.body; // pulls the input data out of the request
   const user = await User.findOne({ where: { username } }); // tries to find the user in the database
 
@@ -60,13 +60,22 @@ router.post('/login', csrfProtection, loginValidators, asyncHandler(async (res, 
 }));
 
 // GET /users/signup
-router.get('/signup', csrfProtection, (req, res, next)=> {
-  const user = db.User.build();
+router.get('/signup', csrfProtection, asyncHandler(async (req, res, next)=> {
+  const user = await db.User.build({
+    email: null,
+    username: null,
+    firstName: null,
+    lastName: null,
+    hashedPassword: null
+  });
   res.render('user-signup',{ title: "New User Sign Up",
   user,
   csrfToken: req.csrfToken(),
   });
-});
+}));
+  // router.get('/signup', (req, res) => {
+  // res.send('Hello!')
+// })
 
 const signUpUserValidators = [
   check('username')
