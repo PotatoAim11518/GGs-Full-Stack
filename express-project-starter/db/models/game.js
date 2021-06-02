@@ -15,6 +15,8 @@ module.exports = (sequelize, DataTypes) => {
     Game.belongsTo(models.Publisher, { foreignKey: 'publisherId'});
     //game belongs to a publisher
     Game.belongsTo(models.Genre, { foreignKey: 'genreId'});
+
+    Game.hasMany(models.Reviews, { foreignKey: 'gameId'});
   };
   return Game;
 };

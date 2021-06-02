@@ -14,7 +14,7 @@ module.exports = (sequelize, DataTypes) => {
       through: 'UsersGames',
       otherKey: 'reviewId',
       foreignKey: 'userId'
-    }),
+    })
     // User.hasMany() userGames
   };
   return User;
