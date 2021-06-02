@@ -12,7 +12,9 @@ module.exports = (sequelize, DataTypes) => {
   Game.associate = function(models) {
     // associations can be defined here
     //game belongs to a genre
+    Game.belongsTo(models.Publisher, { foreignKey: 'publisherId'});
     //game belongs to a publisher
+    Game.belongsTo(models.Genre, { foreignKey: 'genreId'});
   };
   return Game;
 };
