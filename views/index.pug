@@ -9,30 +9,14 @@ append head
 block content
 h1= title
 div.trendingBox
-  a(href=`/games/${game1}`)
-    img(src=`${imageSrc}`)
-  a(href=`/games/${randomGameId}`)
-    img(src=`${imageSrc}`)
-  a(href=`/games/${randomGameId}`)
-    img(src=`${imageSrc}`)
+  a(href=`/games/${game1.id}`)
+    img(src=`${game1.imageSrc}`)
+  a(href=`/games/${game2.id}`)
+    img(src=`${game2.imageSrc}`)
+  a(href=`/games/${game3.id}`)
+    img(src=`${game3.imageSrc}`)
 div.genreBox
-  div
-    a(href=`/genres/${id}`) #{genreName}
-  div
-    a(href=`/genres/${id}`) #{genreName}
-  div
-    a(href=`/genres/${id}`) #{genreName}
-  div
-    a(href=`/genres/${id}`) #{genreName}
-  div
-    a(href=`/genres/${id}`) #{genreName}
-  div
-    a(href=`/genres/${id}`) #{genreName}
-  div
-    a(href=`/genres/${id}`) #{genreName}
-  div
-    a(href=`/genres/${id}`) #{genreName}
-  div
-    a(href=`/genres/${id}`) #{genreName}
-  div
-    a(href=`/genres/${id}`) #{genreName}
+  each genre in genres
+    div
+      a(href=`/genres/${genre.id}`)#{genre.genreName}
+  
