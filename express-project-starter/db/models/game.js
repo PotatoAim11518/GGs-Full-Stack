@@ -16,16 +16,15 @@ module.exports = (sequelize, DataTypes) => {
     //game belongs to a publisher
     Game.belongsTo(models.Genre, { foreignKey: 'genreId'});
     //game has many reviews
-    Game.hasMany(models.Reviews, { foreignKey: 'gameId'});
+    Game.hasMany(models.Review, { foreignKey: 'gameId'});
 
-     //usersgames
-     const columnMapping = {
+    //usersgames
+    const columnMapping = {
       through: 'UsersGame',
       otherKey: 'userId',
       foreignKey: 'gameId'
-      }
-      Game.belongsToMany(models.User, columnMapping);
-  };
+    }
+    Game.belongsToMany(models.User, columnMapping);
   };
   return Game;
-
+};

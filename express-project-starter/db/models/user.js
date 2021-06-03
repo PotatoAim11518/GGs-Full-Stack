@@ -5,7 +5,7 @@ module.exports = (sequelize, DataTypes) => {
     firstName: DataTypes.STRING,
     lastName: DataTypes.STRING,
     email: DataTypes.STRING,
-    hashedPassword: DataTypes.STRING
+    hashedPassword: DataTypes.STRING.BINARY
   }, {});
   User.associate = function(models) {
     // associations can be defined here
@@ -14,7 +14,7 @@ module.exports = (sequelize, DataTypes) => {
     // User.hasMany() userGames
     User.hasMany(models.UsersGame, {foreignKey: "userId"});
 
-    //usersgames 
+    //usersgames
     const columnMapping = {
       through: 'UsersGame',
       otherKey: 'gameId',
