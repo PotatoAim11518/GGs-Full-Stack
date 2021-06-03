@@ -6,11 +6,25 @@ module.exports = (sequelize, DataTypes) => {
     genreId: DataTypes.INTEGER,
     publisherId: DataTypes.INTEGER,
     platforms: DataTypes.TEXT,
-    imagSrc: DataTypes.STRING,
+    imageSrc: DataTypes.STRING,
     releaseDate: DataTypes.DATE
   }, {});
   Game.associate = function(models) {
     // associations can be defined here
+    //game belongs to a genre
+    Game.belongsTo(models.Publisher, { foreignKey: 'publisherId'});
+    //game belongs to a publisher
+    Game.belongsTo(models.Genre, { foreignKey: 'genreId'});
+    //game has many reviews
+    Game.hasMany(models.Review, { foreignKey: 'gameId'});
+
+    //usersgames
+    const columnMapping = {
+      through: 'UsersGame',
+      otherKey: 'userId',
+      foreignKey: 'gameId'
+    }
+    Game.belongsToMany(models.User, columnMapping);
   };
   return Game;
 };

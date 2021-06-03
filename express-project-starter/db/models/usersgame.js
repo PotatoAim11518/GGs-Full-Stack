@@ -2,7 +2,6 @@
 module.exports = (sequelize, DataTypes) => {
   const UsersGame = sequelize.define('UsersGame', {
     gameId: DataTypes.INTEGER,
-    reviewId: DataTypes.INTEGER,
     userId: DataTypes.INTEGER,
     playing: DataTypes.BOOLEAN,
     played: DataTypes.BOOLEAN,
@@ -10,6 +9,7 @@ module.exports = (sequelize, DataTypes) => {
   }, {});
   UsersGame.associate = function(models) {
     // associations can be defined here
+    // UsersGame.belongsTo(models., { foreignKey: ''});
   };
   return UsersGame;
 };

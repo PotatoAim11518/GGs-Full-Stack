@@ -8,12 +8,15 @@ module.exports = {
       */
     return queryInterface.bulkInsert(
       "Users",
-      [
-        {
-          //users seed data in here in separate objects
-        },
-      ],
-      {}
+      [{
+        username: "Alex",
+        firstName: "Alex",
+        lastName: "Hertel",
+        email: 'alex@alex.com',
+        hashedPassword: "sefgsefvsefv",
+        createdAt: new Date(),
+        updatedAt: new Date()
+      }, ], {}
     );
   },
 

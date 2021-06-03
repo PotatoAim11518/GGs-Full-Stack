@@ -31,7 +31,7 @@ module.exports = {
         allowNull: false,
         type: Sequelize.TEXT
       },
-      imagSrc: {
+      imageSrc: {
         allowNull: false,
         type: Sequelize.STRING
       },

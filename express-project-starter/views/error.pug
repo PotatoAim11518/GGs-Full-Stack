@@ -1,8 +1,6 @@
-block content
+extends layout
 
-if errors.length
-  .login-errors
-    p Login Failed! Sorry, cheat codes don't work here.
-    ul
-      each error in errors
-        li= error
+block content
+  h1= message
+  h2= error.status
+  pre #{error.stack}

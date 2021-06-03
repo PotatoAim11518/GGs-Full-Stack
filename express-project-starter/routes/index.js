@@ -3,7 +3,6 @@ const router = express.Router();
 const asyncHandler = require('./utils')
 const { Genre, Game } = require('../db/models');
 
-
 /* GET home page. */
 router.get('/', asyncHandler(async (req, res, next) => {
   const randomNumber1 = Math.floor(Math.random() * 8);
