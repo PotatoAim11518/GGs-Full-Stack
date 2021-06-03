@@ -1,5 +1,5 @@
 const express = require('express');
-const { Review, Game } = require('../db/models');
+const { Review, Game, User} = require('../db/models');
 const { authUser } = require('../auth');
 const { csrfProtection, asyncHandler} = require('./utils');
 const { check, validationResult } = require('express-validator');
@@ -10,7 +10,7 @@ const router = express.Router();
 router.get('/games/:gameId/reviews', asyncHandler((req, res) => {
   const gameId = parseInt(req.params.gameId, 10);
   const reviews = await Review.findAll({
-    include: [ Game ],
+    include: [ Game, User ],
     where: {
       gameId
     }
