@@ -10,7 +10,7 @@ const {
 
 /* GET home page. */
 router.get('/', asyncHandler(async (req, res, next) => {
-  const randomNumber1 = Math.floor(Math.random() * 8);
+  const randomNumber1 = Math.floor(Math.random() * (9 - 1) + 1);
   const randomNumber2 = Math.floor(Math.random() * (17 - 9) + 9);
   const randomNumber3 = Math.floor(Math.random() * (25 - 17) + 17);
 
@@ -43,6 +43,3 @@ router.get('/', asyncHandler(async (req, res, next) => {
 }));
 
 module.exports = router;
-
-
-// COMMENTS
