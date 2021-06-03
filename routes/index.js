@@ -17,7 +17,13 @@ router.get('/', asyncHandler(async (req, res, next) => {
     where:{ id },
     include: genreName
   })
-  res.render('index', genres, game1, game2, game3, { title: 'Good Games' });
+  res.render('index', {
+    title: 'Good Games',
+    genres,
+    game1,
+    game2,
+    game3,
+  });
 }));
 
 module.exports = router;
