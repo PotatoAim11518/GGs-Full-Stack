@@ -5,5 +5,15 @@ html
       title=title
       link(rel='stylesheet' href='/stylesheets/reset.css')
   body
-    block body 
+    block body
+      append body
+        nav.navbar
+          div
+            a(href='/')
+              img(src="/logo.png")
+            a(href='/search') Search
+            a.nav-item.nav-link(href='/genres') Genres
+            a.nav-item.nav-link(href='/users/login') Log in
+            a.nav-item.nav-link(href='/') Log Out
+            a.nav-item.nav-link(href='/users/signup') Sign up
   block content
