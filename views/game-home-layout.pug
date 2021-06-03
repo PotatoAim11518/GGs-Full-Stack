@@ -7,19 +7,32 @@ append head
 block content
     +errorReport(errors)
 
-
-
-// navbar
 // thumbnail cover picture
+div
+    img(href=`` class="game-thumbnail")
+
 // game info div
-    // title
-    // release date
-    // rating
-    // publisher
-    // genre
-    // platform
+div
+    div
+        h2(class="game-title")
+    div
+        p(id="game-release-date")
+    div
+        p(id="game-publisher")
+    div
+        p(id="game-genre")
+    div
+        p(id="game-platform")
+div
+    div
+        h4(class="description-header") Description
+    div
+        p(id="game-description")
 // description div
     // description text
+
+// -----------------------
+
 // addToList dropdown
     // playing
     // want to play
@@ -27,7 +40,4 @@ block content
 // reviews form
     // "Post Review" button
     // username div
-    //
-
-
-//Hey Alex
+    // content div
