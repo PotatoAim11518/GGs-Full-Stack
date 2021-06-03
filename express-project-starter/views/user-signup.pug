@@ -10,8 +10,8 @@ block content
     +field('First Name', 'firstName', user.firstName)
     +field('Last Name', 'lastName', user.lastName)
     +field('Email Address', 'email', user.email)
-    +field('Password', 'hashedPassword', user.hashedPassword, 'password')
-    +field('Confirm Password', 'confirmPassword', '', 'password')
+    +field('Password', 'password', user.password, 'password')
+    +field('Confirm Password', 'confirmPassword', user.confirmPassword, 'password')
     div
       button(type='submit' class='signup-button') Sign-Up!
     a(href='/') Cancel

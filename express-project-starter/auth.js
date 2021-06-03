@@ -6,8 +6,9 @@ const loginUser = (req, res, user) => {
    };
 };
 
-const logoutUser = (req, res, next) => {
+const logoutUser = (req, res) => {
    delete req.session.auth; // removes the session auth object
+   return
 }
 
 const restoreUser = async (req, res, next) => {
@@ -32,9 +33,9 @@ const restoreUser = async (req, res, next) => {
 }
 
 // checks
-const authUser = (req, res, next) => {
+const authUser = (req, res) => {
    if (!res.locals.authenticated) {
-      return res.redirect('/user/login')
+      return res.redirect('/users/login')
    }
    return next();
 };

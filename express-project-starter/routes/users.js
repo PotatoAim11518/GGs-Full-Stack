@@ -38,7 +38,7 @@ router.post(
     const validatorErrors = validationResult(req);
 
     // check for validation errors...
-    if (validatorErrors.isEmpty()) {
+    if (validatorErrors.isEmpty()) { // when there are no errors
 
       if (user !== null) { // if the user was found...
 
@@ -46,6 +46,7 @@ router.post(
 
         if (passwordMatch) { // ...and if the password matches the hash
           loginUser(req, res, user); // log the user in
+          console.log('-----Session object-----', req.session)
           return res.redirect('/');
         }
       }
@@ -78,9 +79,7 @@ router.get('/signup', csrfProtection, asyncHandler(async (req, res, next)=> {
   csrfToken: req.csrfToken(),
   });
 }));
-  // router.get('/signup', (req, res) => {
-  // res.send('Hello!')
-// })
+
 
 const signUpUserValidators = [
   check('username')
@@ -113,7 +112,7 @@ const signUpUserValidators = [
         }
       })
     }),
-  check('hashedPassword')
+  check('password')
     .exists({checkFalsy: true})
     .withMessage('Please povide a value for Password')
     .isLength({max:30})
@@ -122,11 +121,11 @@ const signUpUserValidators = [
     .withMessage('Password must contain at least 1 lowercase letter, uppercase letter, number, and special character (Examp1e!)'),
   check('confirmPassword')
     .exists({checkFalsy : true})
-    .withMessage('Pleasse provide a value for Confirm Password')
+    .withMessage('Please provide a value for Confirm Password')
     .isLength({ max: 30 })
     .withMessage('Confirm Password must not be more than 50 characters long')
     .custom((value, {req}) => {
-      if (value !== req.body.hashedPassword){
+      if (value !== req.body.password){
         throw new Error('Confirm Password does not match Password')
       }
       return true;
@@ -135,14 +134,13 @@ const signUpUserValidators = [
 
 // POST /users/signup
 router.post('/signup', csrfProtection, signUpUserValidators, asyncHandler(async(req, res, next) => {
-  const {email,username,firstName,lastName,hashedPassword} = req.body;
+  const { email, username, firstName, lastName, password } = req.body;
 
-  const user = User.build({
-    email,
+  const user = User.build({ // builds a user sans password because we need to hash it, but only if everything else passes validation
     username,
     firstName,
     lastName,
-    hashedPassword
+    email
   });
   const validationErrors = validationResult(req);
   if (validationErrors.isEmpty()) {
@@ -151,21 +149,23 @@ router.post('/signup', csrfProtection, signUpUserValidators, asyncHandler(async(
     await user.save();
     res.redirect('/');
   } else {
-    const errors = validationErrors.array().map((error)=> error.msg)
+    const errors = validationErrors.array().map((error) => error.msg)
     res.render('user-signup',{
       title: "New User Sign Up",
-      user,errors,
+      user,
+      errors,
       csrfToken: req.csrfToken(),
     })
   }
-
 }));
 
-// POST /users/logout
-router.post('/logout', (req, res) => {
+// GET /users/logout
+router.get('/logout', (req, res) => {
+  // console.log("----------GOT TO PATH----------")
   logoutUser(req, res);
-  res.redirect('/login');
+  // console.log("----------GOT PAST USER LOGOUT----------")
+  res.redirect('/users/login');
+  console.log(req.session)
 })
-
 
 module.exports = router;
