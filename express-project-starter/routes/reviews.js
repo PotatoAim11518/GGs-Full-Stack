@@ -19,11 +19,19 @@ router.get('/games/:gameId/reviews', asyncHandler((req, res) => {
   res.render('game', { reviews })
 }));
 
-
+const reviewValidators = [
+  check('rating')
+    .exists({ checkFalsy: true })
+    .withMessage('Please rate this game!')
+]
 
 // POST /games/:gameId/reviews
-router.post('/games/:gameId/reviews', csrfProtection, requireAuth, asyncHandler((req, res) => {
+router.post('/games/:gameId/reviews', csrfProtection, requireAuth, reviewValidators,asyncHandler((req, res) => {
   if (req.session.auth) {
+
+    const validatorErrors = validationResult(req);
+
+
     const gameId = parseInt(req.params.gameId);
     const { userId } = req.session.auth;
     const { content, rating } = req.body;
