@@ -1,4 +1,4 @@
-extends navbar
+extends layout
 
 append head
     link(rel="stylesheet" href="/stylesheets/game-home-layout.css")
@@ -9,30 +9,29 @@ block content
 
 // thumbnail cover picture
 div
-    img(href=`` class="game-thumbnail")
+    img(src=imageSrc class="game-thumbnail")
 
 // game info div
 div
     div
-        h2(class="game-title")
+        h2(class="game-title") #{name}
     div
-        p(id="game-release-date")
+        p(id="game-release-date") #{releaseDate}
     div
-        p(id="game-publisher")
+        p(id="game-publisher") #{Publisher.publisherName}
     div
-        p(id="game-genre")
+        p(id="game-genre") #{Genre.genreName}
     div
-        p(id="game-platform")
+        p(id="game-platform") #{platforms}
 div
     div
         h4(class="description-header") Description
     div
-        p(id="game-description")
-// description div
-    // description text
+        p(id="game-description") #{description}
+
 
 // -----------------------
-
+// BONUS STUFF 
 // addToList dropdown
     // playing
     // want to play
