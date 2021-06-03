@@ -7,7 +7,7 @@ const { check, validationResult } = require('express-validator');
 const router = express.Router();
 
 // GET /games/:gameId/reviews
-router.get('/games/:gameId/reviews', asyncHandler((req, res) => {
+router.get('/games/:gameId/reviews', asyncHandler(async (req, res) => {
   const gameId = parseInt(req.params.gameId, 10);
   const reviews = await Review.findAll({
     include: [ Game ],
@@ -26,7 +26,7 @@ const reviewValidators = [
 ]
 
 // POST /games/:gameId/reviews
-router.post('/games/:gameId/reviews', csrfProtection, requireAuth, reviewValidators,asyncHandler((req, res) => {
+router.post('/games/:gameId/reviews', csrfProtection, requireAuth, reviewValidators,asyncHandler(async (req, res) => {
   if (req.session.auth) {
 
     const validatorErrors = validationResult(req);

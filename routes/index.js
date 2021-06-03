@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const asyncHandler = require('./utils')
+const { asyncHandler } = require('./utils')
 const { Genre, Game } = require('../db/models');
 
 /* GET home page. */
