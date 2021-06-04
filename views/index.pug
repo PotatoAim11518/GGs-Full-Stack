@@ -7,18 +7,22 @@ append head
   script(src="/javascripts/index.js" type="module" defer)
 
 block content
-  h1.landingWelcome= title
+  div.home-banner
+    img#subLogo1(src="/logo.png")
+    h1.landingWelcome= title
+    img#subLogo2(src="/logo.png")
   h2.trend Trending Games
+  div
   div.trendingBox
-    a.trending-game(href=`/games/${game1.id}`)
+    a.trending-game(href=`/games/${game1.id}` id="trendingGame1")
       img(src=`${game1.imageSrc}`)
-    a.trending-game(href=`/games/${game2.id}`)
+    a.trending-game(href=`/games/${game2.id}` id="trendingGame2")
       img(src=`${game2.imageSrc}`)
-    a.trending-game(href=`/games/${game3.id}`)
+    a.trending-game(href=`/games/${game3.id}` id="trendingGame2")
       img(src=`${game3.imageSrc}`)
   div.genreBox
     h2.genreHomeTitle Genres
     each genre in genres
       div
-        a(href=`/genres/${genre.id}`) #{genre.genreName}
+        a(href=`/genres/${genre.id}` class="genre-hover") #{genre.genreName}
 

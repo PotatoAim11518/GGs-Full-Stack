@@ -37,7 +37,12 @@ h1 {
   width: 100px;
   margin-right: 200px;
   float:left;
-  padding-left:10px;
+  padding:10px;
+}
+.logo-img:hover{
+  transition: 0.55s ease-in-out;
+  background-color: #293241ff;
+  transform: scaleX(-1);
 }
 .nav-item{
   display:inline-flex;
@@ -50,8 +55,9 @@ h1 {
   text-decoration: none;
 }
 .nav-link:hover{
-  background-color: #4f5d75 ;
+  background-color: #293241ff ;
   color: #ef8354;
+  transition: 0.4s ease;
 }
 
 .form-container{
@@ -102,6 +108,13 @@ h1 {
 .signup-form-link>a:hover{
   color:blue;
 }
+
+
+
+.navbar-sameLine {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 3em;
 li.error{
   color:red;
   font-weight: bold;
