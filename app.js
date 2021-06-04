@@ -12,6 +12,7 @@ const gamesRouter = require('./routes/games');
 const allGamesRouter = require('./routes/allGames');
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
+const allGenresRouter = require('./routes/allGenres');
 // const reviewsRouter = require('./routes/reviews');
 
 const app = express();
@@ -45,6 +46,7 @@ app.use(restoreUser);
 app.use('/', indexRouter);
 app.use('/games', gamesRouter);
 app.use('/users', usersRouter);
+app.use('/allGenres', allGenresRouter);
 app.use('/allGames', allGamesRouter);
 // app.use(reviewsRouter);
 
