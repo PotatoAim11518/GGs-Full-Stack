@@ -3,7 +3,7 @@ h1 {
 }
 
 body {
-    background-color: #e0fbfcff;
+    background-color: #293241ff;
 }
 
 .home-banner {
@@ -38,6 +38,7 @@ body {
 .genreHomeTitle{
     font-weight: bold;
     font-size: 1.5rem;
+    color: #293241ff ;
 }
 
 div.trendingBox{
@@ -61,7 +62,7 @@ a.trending-game>img:hover{
 
 }
 
-h2.trend{
+.trend{
     padding: 10px;
     display:flex;
     align-items: center;
@@ -70,6 +71,7 @@ h2.trend{
     font-size: 1.5rem;
     justify-content: space-between;
     background-color: #3d5a80ff;
+    color: #e0fbfcff;
 }
 
 .genreBox{
@@ -104,6 +106,9 @@ h2.trend{
     }
 }
 
+.genre-hover {
+    color: #293241ff ;
+}
 .genre-hover:hover{
     background-color: #293241ff ;
     color: #e0fbfcff;
