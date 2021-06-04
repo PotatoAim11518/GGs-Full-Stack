@@ -13,6 +13,7 @@ const allGamesRouter = require('./routes/allGames');
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
 const allGenresRouter = require('./routes/allGenres');
+const indivGenreRouter = require('./routes/indivGenre');
 // const reviewsRouter = require('./routes/reviews');
 
 const app = express();
@@ -48,6 +49,7 @@ app.use('/games', gamesRouter);
 app.use('/users', usersRouter);
 app.use('/allGenres', allGenresRouter);
 app.use('/allGames', allGamesRouter);
+app.use('indivGenre', indivGenreRouter)
 // app.use(reviewsRouter);
 
 

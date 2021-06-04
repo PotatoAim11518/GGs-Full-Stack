@@ -11,7 +11,7 @@ const {
 
 const router = express.Router();
 
-router.get('/:id', asyncHandler(async (req, res) => {
+router.get('/genre/:id', asyncHandler(async (req, res) => {
     const genreId = parseInt(req.params.id, 10)
     const genre = await Genre.findOne({
         where: {
@@ -24,8 +24,8 @@ router.get('/:id', asyncHandler(async (req, res) => {
 
     });
 
-    res.render('game-home-layout', {
-        game
+    res.render('indiv-genre', {
+        genre
     })
 }));
 
