@@ -5,7 +5,7 @@ include utils.pug
 block content
   .reviews__container
     .reviews__form
-    h1 Add a review
+    h1 Add a review for #{game.name}
     +errorReport(errors)
     form(action=`/games/${game.id}/reviews/add`, method="post")
       input(type='hidden', name='_csrf', value=csrfToken)
@@ -32,7 +32,8 @@ block content
           h3.reviews__username #{review.User.username}
           .reviews__reviewText
             p= review.content
-          .review__delete-btn.review__delete-btn--loggedout
-            form(action=`/reviews/${review.id}`, method="post")
-              input(type='hidden', name='_csrf', value=csrfToken)
-              button(type="submit") Delete
+          if (userId === review.userId)
+            .review__delete-btn.review__delete-btn--loggedout
+              form(action=`/reviews/${review.id}`, method="post")
+                input(type='hidden', name='_csrf', value=csrfToken)
+                button(type="submit") Delete
