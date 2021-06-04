@@ -7,7 +7,7 @@ append head
   script(src="/javascripts/index.js" type="module" defer)
 
 block content
-  h1= title
+  h1.landingWelcome= title
   h2.trend Trending Games
   div.trendingBox
     a.trending-game(href=`/games/${game1.id}`)
@@ -17,7 +17,7 @@ block content
     a.trending-game(href=`/games/${game3.id}`)
       img(src=`${game3.imageSrc}`)
   div.genreBox
-    h2 Genres
+    h2.genreHomeTitle Genres
     each genre in genres
       div
         a(href=`/genres/${genre.id}`) #{genre.genreName}
