@@ -10,5 +10,5 @@ block content
         h2.allGenresHeader All Genres
         each genre in genres
             div
-                a(href=`/genres/${genre.id}`)
-                    img(src=`${game.imageSrc}` class="gameThumbnail")
+                a(href=`/genres/${genre.id}`) #{genre.genreName}
+                

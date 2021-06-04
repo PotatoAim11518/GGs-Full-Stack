@@ -1,8 +1,6 @@
 const express = require('express');
 const {
-    Game,
-    Genre,
-    Publisher
+    Genre
 } = require('../db/models');
 const {
     asyncHandler
@@ -12,9 +10,8 @@ const {
 const router = express.Router();
 
 
-router.get('games/genreId/:id', asyncHandler(async (req, res) => {
-    const genreId = parseInt(req.params.id, 10)
-    const genre = await Genre.findAll();
+router.get('/', asyncHandler(async (req, res) => {
+    const genres = await Genre.findAll();
 
     res.render('allgenres', {
         genres
