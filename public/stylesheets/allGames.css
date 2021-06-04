@@ -27,34 +27,4 @@ a.games>img {
 a.games>img.gameThumbnail:hover {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.534);
 }
-/*
-h1.allgamesHeader {
-    display: flex;
-    justify-content: center;
-    text-align: center;
-    color: #3d5a80ff;
-    font-size: 24px;
-    padding: 30px;
-    display:flex;
-    align-items: center;
-    flex-direction: column;
-    font-weight: bold;
-    font-size: 1.5rem;
-}
- */
 
-
-
-/*
-@media screen and (min-width: 750px) and (max-width: 1280px) {
-    .boards__board {
-        width: 33%;
-    }
-}
-
-@media screen and (min-width: 750px) {
-    .boards__board {
-        width: 100%;
-        max-width: unset;
-    }
-} */
