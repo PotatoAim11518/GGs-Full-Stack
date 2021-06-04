@@ -1,0 +1,14 @@
+extends layout
+
+append head
+    //- add page specific styles by appending to the head
+    link(rel="stylesheet" href="/stylesheets/allGenres.css")
+    //- add page specific js
+    script(src="/javascripts/index.js" type="module" defer)
+block content
+    div.allGameBox
+        h2.allGamesHeader #{publisher.publisherName} Games
+        each game in games
+            div
+                a(href=`/games/${game.id}/reviews`)
+                    img(src=`${game.imageSrc}` class="gameThumbnail")

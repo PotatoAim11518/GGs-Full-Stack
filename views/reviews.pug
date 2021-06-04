@@ -1,8 +1,27 @@
-extends layout.pug
+extends layout
 
 include utils.pug
 
 block content
+
+  .game__container
+    .game__thumbnail-image
+      img(src=game.imageSrc class="game-thumbnail")
+    .game__info
+      .game-title.game__info-header Title
+        h2 #{game.name}
+      .game-release-date.game__info-header Release Date
+        p #{game.releaseDate}
+      .game-publisher.game__info-header Publisher
+        p #{game.Publisher.publisherName}
+      .game-genre.game__info-header Genre
+        p #{game.Genre.genreName}
+      .game-platform.game__info-header Platform
+        p #{game.platforms}
+      .game-description__header.game__info-header Description
+        .game-description__text
+          p #{game.description}
+
   .reviews__container
     .reviews__form
     h1 Add a review for #{game.name}

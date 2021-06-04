@@ -2,7 +2,7 @@
 const express = require('express');
 const { check, validationResult } = require('express-validator');
 
-const { Review, Game, User} = require('../db/models');
+const { Review, Game, User, Publisher, Genre } = require('../db/models');
 
 const { authUser } = require('../auth');
 const { csrfProtection, asyncHandler} = require('./utils');
@@ -17,7 +17,16 @@ asyncHandler(async (req, res) => {
   const gameId = parseInt(req.params.id, 10);
   const userId = res.locals.user.id ? res.locals.user.id : null;
   console.log(res.locals.user.id)
-  const game = await Game.findByPk(gameId);
+  const game = await Game.findByPk(gameId, {
+    include: [
+      { model: Publisher,
+        attributes: ["publisherName"]
+      },
+      { model: Genre,
+        attributes: ["genreName"]
+      },
+    ]
+  });
   const reviews = await Review.findAll({
     include: [
       {
@@ -59,8 +68,16 @@ router.post('/games/:id/reviews/add',
     const { userId } = req.session.auth;
     const { content, rating } = req.body;
 
-    const game = await Game.findByPk(gameId)
-
+    const game = await Game.findByPk(gameId, {
+      include: [
+        { model: Publisher,
+          attributes: ["publisherName"]
+        },
+        { model: Genre,
+          attributes: ["genreName"]
+        },
+      ]
+    });
     const reviews = await Review.findAll({
       include: {
         model: User,
