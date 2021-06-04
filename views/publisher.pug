@@ -1,0 +1,11 @@
+extends layout
+append head
+    link(rel="stylesheet" href="/stylesheets/indivPublisher.css")
+    script(src="/javascripts/index.js" type="module" defer)
+block content
+    div.indivPublisherBox
+        h2.indivPublisherHeader #{games[0].Publisher.publisherName} Games
+        each game in games
+            div
+                a(href=`/games/${game.id}`)
+                    img(src=`${game.imageSrc}` class="gameThumbnail")

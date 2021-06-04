@@ -8,6 +8,8 @@ const { sessionSecret } = require('./config')
 const session = require('express-session');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
 const { restoreUser } = require('./auth');
+const allPublishersRouter = require('./routes/allPublishers');
+const publishersRouter = require('./routes/publisher');
 const gamesRouter = require('./routes/games');
 const allGamesRouter = require('./routes/allGames');
 const indexRouter = require('./routes/index');
@@ -52,8 +54,11 @@ app.use('/users', usersRouter);
 app.use(reviewsRouter);
 app.use('/allGenres', allGenresRouter);
 app.use('/allGames', allGamesRouter);
+app.use('/allPublishers', allPublishersRouter);
+app.use('/publishers', publishersRouter);
+app.use('/genres', indivGenreRouter);
+// app.use(reviewsRouter);
 
-app.use('/genres', indivGenreRouter)
 
 
 // catch 404 and forward to error handler
