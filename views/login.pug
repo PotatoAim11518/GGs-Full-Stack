@@ -1,20 +1,22 @@
 extends layout.pug
-
+append head 
+  link(rel='stylesheet' href='/stylesheets/login.css')
 include utils.pug
 
 block content
   +errorReport(errors)
-  form(action='/users/login', method='post')#login-form
-    input(type='hidden', name='_csrf', value=csrfToken)
-    div
-      label(for='username') Username
-    div
-      input(type='text', name='username', value=username, defaultValue=null, placeholder='Enter Username')
-    div
-      label(for='password') Password
-    div
-      input(type='password', name='password',value=password, placeholder='Enter Password')
-    div
-      button(type='submit') Login
-    div
-      p: a(href='/users/signup') New to GGs? Sign up here!
+  div.form-login-container
+    form(action='/users/login', method='post')#login-form
+      input(type='hidden', name='_csrf', value=csrfToken)
+      div
+        label.login-label(for='username') Username
+      div
+        input(type='text', name='username', value=username, defaultValue=null, placeholder='Enter Username')
+      div
+        label.login-label(for='password') Password
+      div
+        input(type='password', name='password',value=password, placeholder='Enter Password')
+      div
+        button.signup-button(type='submit') Login
+      div
+        p: a.signup-link(href='/users/signup') New to GGs? Sign up here!
