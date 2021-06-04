@@ -2,6 +2,10 @@ h1 {
     color: #555555;
 }
 
+body {
+    background-color: #e0fbfcff;
+}
+
 .landingWelcome {
     font-weight: bold;
     font-size: 3rem;
@@ -45,4 +49,29 @@ h2.trend{
     display:flex;
     align-items: center;
     flex-direction: column;
+}
+
+
+
+/* Fade in Effect down here */
+
+#trendingGame1 {
+    animation: transitionIn 1s;
+}
+
+#trendingGame2 {
+    animation: transitionIn 1.5s;
+}
+
+#trendingGame3 {
+    animation: transitionIn 2s;
+}
+
+@keyframes transitionIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }

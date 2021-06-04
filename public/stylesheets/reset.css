@@ -48,10 +48,14 @@ h1 {
   color: #ffffff;
   text-align: center;
   text-decoration: none;
+  -moz-transition: opacity .55s ease-in-out;
+  -webkit-transition: opacity .55s ease-in-out;
 }
 .nav-link:hover{
-  background-color: #4f5d75 ;
+  background-color: #293241ff ;
   color: #ef8354;
+  -moz-transition: opacity .55s ease-in-out;
+  -webkit-transition: opacity .55s ease-in-out;
 }
 
 .form-container{
@@ -102,3 +106,10 @@ h1 {
   color:blue;
 }
 
+.navbar-right {
+  display: flex;
+  align-items: flex-end;
+  align-self: flex-end;
+  justify-content: flex-end;
+  position: relative;
+}
