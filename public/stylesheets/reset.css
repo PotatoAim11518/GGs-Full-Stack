@@ -113,3 +113,9 @@ h1 {
   justify-content: flex-end;
   position: relative;
 }
+
+.navbar-left {
+  display: flex;
+  /* justify-content: flex-start; */
+  position: relative;
+}

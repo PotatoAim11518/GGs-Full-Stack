@@ -9,11 +9,12 @@ html
       append body
         nav.nav-container
           div
-            a(href='/')
-              img.logo-img(src="/logo.png")
-            a.nav-item.nav-link(href='/allGames') Games
-            a.nav-item.nav-link(href='/allGenres') Genres
-            a.nav-item.nav-link(href='/allPublishers') Publishers
+            div(class="navbar-left")
+              a(href='/')
+                img.logo-img(src="/logo.png")
+              a.nav-item.nav-link(href='/allGames') Games
+              a.nav-item.nav-link(href='/allGenres') Genres
+              a.nav-item.nav-link(href='/allPublishers') Publishers
             div(class="navbar-right")
               a.nav-item.nav-link(href='/users/login') Log in
               a.nav-item.nav-link(href='/users/signup') Sign up
