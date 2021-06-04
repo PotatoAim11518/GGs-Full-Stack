@@ -11,6 +11,7 @@ const { restoreUser } = require('./auth');
 const gamesRouter = require('./routes/games');
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
+const genresRouter = require('./routes/genres');
 // const reviewsRouter = require('./routes/reviews');
 
 const app = express();
@@ -44,6 +45,7 @@ app.use(restoreUser);
 app.use('/', indexRouter);
 app.use('/games', gamesRouter);
 app.use('/users', usersRouter);
+app.use('/genres'.genresRouter)
 // app.use(reviewsRouter);
 
 
