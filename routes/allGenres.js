@@ -16,7 +16,7 @@ router.get('games/genreId/:id', asyncHandler(async (req, res) => {
     const genreId = parseInt(req.params.id, 10)
     const genre = await Genre.findAll();
 
-    res.render('all-genres', {
+    res.render('allgenres', {
         genres
     })
 }));
