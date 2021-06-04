@@ -147,7 +147,7 @@ module.exports = {
       genreId: 4,
       publisherId: 13,
       platforms: "MacOS, PC",
-      imageSrc: "https://lh3.googleusercontent.com/proxy/Fl6SrY-r6s0ih9VZxeraZZsJHvcu8L7_oO4KiEDhjrfzUCxDVp3E_wJO_xOp8MNaMVILHq_QKrTdN1RHL1Nx-8b0_EhkoyMAGZYqrLlwEcjHfr1z0XWCjl9sE0L9XXuiR3Z6JTUV2GdRVXlp",
+      imageSrc: "https://www.google.com/url?sa=i&url=https%3A%2F%2Fstore.steampowered.com%2Fapp%2F837470%2FUntitled_Goose_Game%2F&psig=AOvVaw1t_-ReB90yk_pRkw4fMiEx&ust=1622906773299000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCLjV6v-k_vACFQAAAAAdAAAAABAD",
       releaseDate: "September 23, 2020",
         createdAt: new Date(),
         updatedAt: new Date()
