@@ -7,7 +7,10 @@ append head
   script(src="/javascripts/index.js" type="module" defer)
 
 block content
-  h1.landingWelcome= title
+  div.home-banner
+    img#subLogo1(src="/logo.png")
+    h1.landingWelcome= title
+    img#subLogo2(src="/logo.png")
   h2.trend Trending Games
   div
   div.trendingBox
