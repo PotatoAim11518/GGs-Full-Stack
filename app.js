@@ -15,6 +15,8 @@ const usersRouter = require('./routes/users');
 const reviewsRouter = require('./routes/reviews');
 const allGenresRouter = require('./routes/allGenres');
 
+const indivGenreRouter = require('./routes/indivGenre');
+
 
 const app = express();
 
@@ -50,6 +52,8 @@ app.use('/users', usersRouter);
 app.use(reviewsRouter);
 app.use('/allGenres', allGenresRouter);
 app.use('/allGames', allGamesRouter);
+
+app.use('/genres', indivGenreRouter)
 
 
 // catch 404 and forward to error handler
