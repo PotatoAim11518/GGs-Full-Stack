@@ -31,7 +31,6 @@ router.get('/', asyncHandler(async (req, res, next) => {
       id: randomNumber3
     },
   })
-
   const genres = await Genre.findAll();
   res.render('index', {
     title: 'Good Games',

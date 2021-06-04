@@ -147,7 +147,7 @@ module.exports = {
       genreId: 4,
       publisherId: 13,
       platforms: "MacOS, PC",
-      imageSrc: "https://lh3.googleusercontent.com/proxy/Fl6SrY-r6s0ih9VZxeraZZsJHvcu8L7_oO4KiEDhjrfzUCxDVp3E_wJO_xOp8MNaMVILHq_QKrTdN1RHL1Nx-8b0_EhkoyMAGZYqrLlwEcjHfr1z0XWCjl9sE0L9XXuiR3Z6JTUV2GdRVXlp",
+      imageSrc: "https://store-images.s-microsoft.com/image/apps.25596.13856628096419252.2543d50f-bd53-4ec1-90dd-d76914de6757.df5a7952-3ea7-44b8-a791-0c3884d9b256",
       releaseDate: "September 23, 2020",
         createdAt: new Date(),
         updatedAt: new Date()
@@ -217,7 +217,7 @@ module.exports = {
       genreId: 4,
       publisherId: 17,
       platforms: "Nintendo Switch",
-      imageSrc: "https://m.media-amazon.com/images/I/810s0mZFKcL._SS500_.jpg",
+      imageSrc: "https://f4.bcbits.com/img/a4218237573_10.jpg",
       releaseDate: "March 24, 2015",
         createdAt: new Date(),
         updatedAt: new Date()

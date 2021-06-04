@@ -1,0 +1,14 @@
+extends layout
+
+append head
+    //- add page specific styles by appending to the head
+    link(rel="stylesheet" href="/stylesheets/allGenres.css")
+    //- add page specific js
+    script(src="/javascripts/index.js" type="module" defer)
+block content
+    div.allGenresBox
+        h2.allGenresHeader All Genres
+        each genre in genres
+            div
+                a(href=`/genres/${genre.id}`) #{genre.genreName}
+                
