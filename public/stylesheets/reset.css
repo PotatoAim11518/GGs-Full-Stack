@@ -37,7 +37,12 @@ h1 {
   width: 100px;
   margin-right: 200px;
   float:left;
-  padding-left:10px;
+  padding:10px;
+}
+.logo-img:hover{
+  transition: 0.55s ease-in-out;
+  background-color: #293241ff;
+  transform: scaleX(-1);
 }
 .nav-item{
   display:inline-flex;
