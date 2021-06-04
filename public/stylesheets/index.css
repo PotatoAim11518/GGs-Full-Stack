@@ -1,3 +1,16 @@
 h1 {
     color: #555555;
 }
+div.trendingBox{
+    margin:5px;
+    border: 1px solid #ccc;
+    display: flex;
+    width:180px;
+}
+div.trendingBox:hover{
+    border:1px solid #777;
+}
+a.trending-game>img{
+    max-width: 350px;
+    height:auto;
+}
