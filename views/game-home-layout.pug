@@ -1,0 +1,38 @@
+extends layout
+
+append head
+    link(rel="stylesheet" href="/stylesheets/game-home-layout.css")
+    script(src="/javascripts/index.js")
+
+block content
+    div
+        img(src=game.imageSrc class="game-thumbnail")
+    div
+        div
+            h2(class="game-title") #{game.name}
+        div
+            p(id="game-release-date") #{game.releaseDate}
+        div
+            a(href=`/publishers/${game.publisherId}` id="game-publisher") #{game.Publisher.publisherName}
+        div
+            a(href=`/genres/${game.genreId}` id="game-genre") #{game.Genre.genreName}
+        div
+            p(id="game-platform") #{game.platforms}
+    div
+        div
+            h4(class="description-header") Description
+        div
+            p(id="game-description") #{game.description}
+
+
+//- // -----------------------
+//- // BONUS STUFF
+//- // addToList dropdown
+//-     // playing
+//-     // want to play
+//-     // played
+
+//- // reviews form
+//-     // "Post Review" button
+//-     // username div
+//-     // content div
