@@ -161,11 +161,8 @@ router.post('/signup', csrfProtection, signUpUserValidators, asyncHandler(async(
 
 // GET /users/logout
 router.get('/logout', (req, res) => {
-  // console.log("----------GOT TO PATH----------")
   logoutUser(req, res);
-  // console.log("----------GOT PAST USER LOGOUT----------")
   res.redirect('/users/login');
-  console.log(req.session)
 })
 
 module.exports = router;
