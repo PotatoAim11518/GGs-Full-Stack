@@ -107,5 +107,12 @@ li.error{
   font-weight: bold;
 }
 .login-errors{
-  
+  box-sizing: border-box;
+  margin:auto;
+  width:350px;
+  border-radius: 5px;
+  padding:20px;
+  display:flex;
+  align-items:center;
+  flex-direction:column;
 }
