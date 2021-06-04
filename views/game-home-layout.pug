@@ -13,9 +13,9 @@ block content
         div
             p(id="game-release-date") #{game.releaseDate}
         div
-            p(id="game-publisher") #{game.Publisher.publisherName}
+            a(href=`/publishers/${game.publisherId}` id="game-publisher") #{game.Publisher.publisherName}
         div
-            p(id="game-genre") #{game.Genre.genreName}
+            a(href=`/genres/${game.genreId}` id="game-genre") #{game.Genre.genreName}
         div
             p(id="game-platform") #{game.platforms}
     div
