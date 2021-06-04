@@ -165,4 +165,17 @@ router.get('/logout', (req, res) => {
   res.redirect('/users/login');
 })
 
+// DEMO USER LOGIN
+router.post(
+  '/login/demo',
+  csrfProtection,
+  asyncHandler(async (req, res) => {
+    const username = 'DemoUser'
+    const user = await User.findOne({ where: { username } });
+    console.log(user)
+    loginUser(req, res, user);
+    return res.redirect('/');
+}));
+
+
 module.exports = router;

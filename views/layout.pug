@@ -8,13 +8,12 @@ html
     block body
       append body
         nav.nav-container
-          a(href='/')
-            img.logo-img(src="/logo.png")
-          div(class="navbar-sameLine")
-            div(class="navbar-left")
-              a.nav-item.nav-link(href='/allGames') Games
-              a.nav-item.nav-link(href='/allGenres') Genres
-              a.nav-item.nav-link(href='/allPublishers') Publishers
+          div
+            a(href='/')
+              img.logo-img(src="/logo.png")
+            a.nav-item.nav-link(href='/games') Games
+            a.nav-item.nav-link(href='/genres') Genres
+            a.nav-item.nav-link(href='/publishers') Publishers
             div(class="navbar-right")
               a.nav-item.nav-link(href='/users/login') Sign in
               a.nav-item.nav-link(href='/users/signup') Sign up

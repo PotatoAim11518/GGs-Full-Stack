@@ -8,16 +8,12 @@ const { sessionSecret } = require('./config')
 const session = require('express-session');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
 const { restoreUser } = require('./auth');
-const allPublishersRouter = require('./routes/allPublishers');
-const publishersRouter = require('./routes/publisher');
-const gamesRouter = require('./routes/games');
-const allGamesRouter = require('./routes/allGames');
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
+const gamesRouter = require('./routes/games');
 const reviewsRouter = require('./routes/reviews');
-const allGenresRouter = require('./routes/allGenres');
-
-const indivGenreRouter = require('./routes/indivGenre');
+const genresRouter = require('./routes/genres');
+const publishersRouter = require('./routes/publishers');
 
 
 const app = express();
@@ -48,16 +44,12 @@ app.use(
 store.sync();
 
 app.use(restoreUser);
-app.use('/', indexRouter);
-app.use('/games', gamesRouter);
 app.use('/users', usersRouter);
+app.use('/', indexRouter);
+app.use(gamesRouter);
 app.use(reviewsRouter);
-app.use('/allGenres', allGenresRouter);
-app.use('/allGames', allGamesRouter);
-app.use('/allPublishers', allPublishersRouter);
-app.use('/publishers', publishersRouter);
-app.use('/genres', indivGenreRouter);
-// app.use(reviewsRouter);
+app.use(genresRouter);
+app.use(publishersRouter);
 
 
 

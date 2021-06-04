@@ -11,21 +11,30 @@ const {
 
 const router = express.Router();
 
+// GET /genres
+router.get('/genres', asyncHandler(async (req, res) => {
+    const genres = await Genre.findAll();
 
-router.get('games/genreId/:id', asyncHandler(async (req, res) => {
+    res.render('genres', {
+        genres
+    })
+}));
+
+
+router.get('/genres/:id', asyncHandler(async (req, res) => {
     const genreId = parseInt(req.params.id, 10)
-    const genre = await Genre.findAll({
+    const genre = await Genre.findByPk(genreId)
+    const games = await Game.findAll({
         where: {
-            id
+            genreId
         },
         include: [{
-            model: Games,
-            attributes: ["name", "imageSrc"]
+            model: Genre
         }]
-
     });
 
-    res.render('all-genres', {
+    res.render('genre', {
+        games,
         genre
     })
 }));

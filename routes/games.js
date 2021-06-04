@@ -1,38 +1,17 @@
 const express = require('express');
-const {
-    Game,
-    Genre,
-    Publisher
-} = require('../db/models');
-const {
-    asyncHandler
-} = require('./utils')
-
+const { Game } = require('../db/models');
+const { asyncHandler } = require('./utils')
 
 const router = express.Router();
 
-// GET /games/:id
-// "/:id(\\d+)"
-router.get('/:id', asyncHandler(async (req, res) => {
-    const gameId = parseInt(req.params.id, 10)
-    const game = await Game.findOne({
-        where: {
-            id: gameId
-        },
-        include: [{
-            model: Genre,
-            attributes: ["genreName"]
-        }, {
-            model: Publisher,
-            attributes: ["publisherName"]
-        }]
+// GET /games
 
-    });
+router.get('/games', asyncHandler(async (req, res) => {
+    const games = await Game.findAll();
 
-    res.render('game-home-layout', {
-        game
+    res.render('games', {
+        games
     })
 }));
-
 
 module.exports = router;
