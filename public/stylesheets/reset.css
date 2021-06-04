@@ -115,6 +115,7 @@ h1 {
   display: flex;
   justify-content: space-between;
   padding-top: 3em;
+}
 li.error{
   color:red;
   font-weight: bold;
