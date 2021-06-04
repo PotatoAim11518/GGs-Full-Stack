@@ -9,28 +9,30 @@ const { csrfProtection, asyncHandler} = require('./utils');
 
 const router = express.Router();
 
-// GET /
-router.get(
-  '/',
-  asyncHandler(async (req, res) => {
-    // const gameId = parseInt(req.params.id, 10);
-    const reviews = await Review.findAll({
-      include: [
-        {
-          model: Game,
-          attributes: ["name"]
-        },
-        {
-          model: User,
-          attributes: ["username"]
-        }],
-      // where: {
-      //   gameId
-      // }
+// GET /games/:id/reviews
+router.get('/games/:id/reviews',
+csrfProtection,
+asyncHandler(async (req, res) => {
+  const gameId = parseInt(req.params.id, 10);
+  const game = await Game.findByPk(gameId)
+  const reviews = await Review.findAll({
+    include: [
+      {
+        model: Game,
+        attributes: ["name"]
+      },
+      {
+        model: User,
+        attributes: ["username"]
+      }],
+      where: {
+        gameId
+      }
   });
-  res.render('reviews', { reviews })
+  res.render('reviews', { reviews, game, csrfToken: req.csrfToken() })
 }));
 
+// Validators for writing a review
 const reviewValidators = [
   check('rating')
     .exists({ checkFalsy: true })
@@ -40,21 +42,23 @@ const reviewValidators = [
     .withMessage('Please write a review before submitting!')
 ]
 
-// POST /add
-router.post('/add',
+// POST /games/:id/reviews/add
+router.post('/games/:id/reviews/add',
   authUser,
   csrfProtection,
   reviewValidators,
   asyncHandler(async (req, res) => {
-    // const gameId = parseInt(req.params.id, 10);
-    // console.log('====>GAMEID', gameId)
+    const gameId = parseInt(req.params.id, 10);
     const { userId } = req.session.auth;
     const { content, rating } = req.body;
-    // console.log('====>SESSION.auth (userId)', req.session.auth)
-    // console.log('====>REQ.PARAMS', req.params)
-    // console.log('====>REQ.BODY', req.body)
+
+    const game = await Game.findByPk(gameId)
 
     const reviews = await Review.findAll({
+      include: {
+        model: User,
+        attributes: ["username"]
+      },
       where: {
         gameId
       }
@@ -79,9 +83,9 @@ router.post('/add',
 
     if (validatorErrors.isEmpty()) {
 
-      if (!currentUserReview) {
+      if (!currentUserReview.length) {
         await newReview.save()
-        res.redirect(`/games/${gameId}/reviews`)
+        res.redirect(`/games/${game.id}/reviews`)
       } else {
         errors.push('Sorry, you\'ve already written a review for this game.');
       }
@@ -91,15 +95,16 @@ router.post('/add',
     }
     res.render('reviews', {
       reviews,
-      gameId,
+      game,
       errors,
+      userId,
       csrfToken: req.csrfToken(),
     })
   }
 ));
 
-// DELETE /:reviewsId
-router.delete(
+// DELETE /reviews/:id
+router.post(
   '/reviews/:id(\\d+)',
   authUser,
   csrfProtection,
@@ -108,13 +113,15 @@ router.delete(
     const reviewId = req.params.id;
     const currentUserReview = await Review.findOne({
       where: {
-        reviewId,
+        id: reviewId,
         userId,
       }
     });
+
     const { gameId } = currentUserReview
     await currentUserReview.destroy();
-    res.redirect(`/games/${gameId}`);
+    res.redirect(`/games/${gameId}/reviews`);
   }
 ));
+
 module.exports = router;
