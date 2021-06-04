@@ -102,4 +102,8 @@ h1 {
 .signup-form-link>a:hover{
   color:blue;
 }
-
+li.error{
+  color:red;
+  font-weight: bold;
+}
+.login

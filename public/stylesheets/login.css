@@ -1,7 +1,9 @@
 .form-login-container{
     box-sizing: border-box;
+    margin:auto;
+    margin-top:200px;
     width:350px;
-    background-color: lightcyan;
+    background-color:#e0fbfcff;
     border-radius: 5px;
     padding:20px;
     display:flex;
@@ -19,8 +21,7 @@ label.login-label{
     font-size: medium;
 }
 .signup-link:hover{
-    color:blue;
-    font-size:larger;
+    color:#3d5a80ff;
 }
 body{
     background-image: url("/dualling.jpg") ;
