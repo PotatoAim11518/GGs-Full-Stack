@@ -1,24 +1,25 @@
 const express = require('express');
-const {
-    Game,
-    Genre,
-    Publisher
-} = require('../db/models');
-const {
-    asyncHandler
-} = require('./utils')
+const { Game, Genre, Publisher } = require('../db/models');
+const { asyncHandler } = require('./utils')
 
 
 const router = express.Router();
 
 // GET /games/:id
 // "/:id(\\d+)"
-router.get('/games/:id', asyncHandler(async (req, res) => {
-    const gameId = Number.parseInt(req.params.id)
-    const game = await Game.findByPk(gameId, {
-        includes: Publisher,
-        Genre
-    })
+router.get('/:id', asyncHandler(async (req, res) => {
+    const gameId = parseInt(req.params.id,10)
+    // const game = await Game.findAll({
+    //     where: {
+    //         id: {gameId}
+    //     },
+    //     include: [{model: Genre, as: "genre", attributes: ["genreName"]}, {model:Publisher, as: "publisher", attributes: ["publisherName"]}]
+
+    // });
+    const game = await Game.findByPk(gameId)
+    const gamePOJO = game.toJSON();
+    // console.log(gamePOJO)
+    // res.send('success')
 
     const {
         name,
@@ -27,7 +28,9 @@ router.get('/games/:id', asyncHandler(async (req, res) => {
         publisherId,
         platforms,
         imageSrc,
-        releaseDate
+        releaseDate,
+        // Publisher,
+        // Genre
     } = game
     res.render('game-home-layout', {
         name,
@@ -36,7 +39,9 @@ router.get('/games/:id', asyncHandler(async (req, res) => {
         publisherId,
         platforms,
         imageSrc,
-        releaseDate
+        releaseDate,
+        // Publisher,
+        // Genre
     })
 }));
 

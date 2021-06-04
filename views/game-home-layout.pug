@@ -5,38 +5,33 @@ append head
     script(src="/javascripts/index.js")
 
 block content
-    +errorReport(errors)
-
-// thumbnail cover picture
-div
-    img(src=imageSrc class="game-thumbnail")
-
-// game info div
-div
     div
-        h2(class="game-title") #{name}
+        img(src=imageSrc class="game-thumbnail")
     div
-        p(id="game-release-date") #{releaseDate}
+        div
+            h2(class="game-title") #{name}
+        div
+            p(id="game-release-date") #{releaseDate}
+        div
+            //-p(id="game-publisher") #{Publisher.publisherName}
+        div
+            //-p(id="game-genre") #{Genre.genreName}
+        div
+            p(id="game-platform") #{platforms}
     div
-        p(id="game-publisher") #{Publisher.publisherName}
-    div
-        p(id="game-genre") #{Genre.genreName}
-    div
-        p(id="game-platform") #{platforms}
-div
-    div
-        h4(class="description-header") Description
-    div
-        p(id="game-description") #{description}
+        div
+            h4(class="description-header") Description
+        div
+            p(id="game-description") #{description}
 
 
-// -----------------------
-// BONUS STUFF
-// addToList dropdown
-    // playing
-    // want to play
-    // played
-// reviews form
-    // "Post Review" button
-    // username div
-    // content div
+//- // -----------------------
+//- // BONUS STUFF
+//- // addToList dropdown
+//-     // playing
+//-     // want to play
+//-     // played
+//- // reviews form
+//-     // "Post Review" button
+//-     // username div
+//-     // content div
