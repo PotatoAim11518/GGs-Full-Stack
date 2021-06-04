@@ -15,6 +15,7 @@ router.get('/:id', asyncHandler(async (req, res) => {
         },
         include: [{
             model: Publisher,
+            attributes: ["publisherName"]
         }]
     });
     res.render('publisher', {
