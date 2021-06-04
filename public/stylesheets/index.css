@@ -1,3 +1,34 @@
 h1 {
     color: #555555;
 }
+
+div.trendingBox{
+    margin:5px;
+    border: 1px solid white;
+    display: flex;
+    justify-content: space-around;
+    width:auto;
+}
+
+a.trending-game>img{
+    max-width: 350px;
+    height:auto;
+}
+
+a.trending-game>img:hover{
+    box-shadow:0 4px 8px 0 rgba(0, 0, 0, 0.534);
+
+}
+
+h2.trend{
+    padding: 10px;
+    display:flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.genreBox{
+    display:flex;
+    align-items: center;
+    flex-direction: column;
+}
