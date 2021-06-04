@@ -8,6 +8,7 @@ append head
 
 block content
   h1= title
+  h2.trend Trending Games
   div.trendingBox
     a.trending-game(href=`/games/${game1.id}`)
       img(src=`${game1.imageSrc}`)
@@ -16,6 +17,7 @@ block content
     a.trending-game(href=`/games/${game3.id}`)
       img(src=`${game3.imageSrc}`)
   div.genreBox
+    h2 Genres
     each genre in genres
       div
         a(href=`/genres/${genre.id}`) #{genre.genreName}
