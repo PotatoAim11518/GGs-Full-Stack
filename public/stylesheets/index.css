@@ -2,6 +2,18 @@ h1 {
     color: #555555;
 }
 
+.landingWelcome {
+    font-weight: bold;
+    font-size: 3rem;
+    padding-left: 1.5em;
+    padding-top: .5em;
+}
+
+.genreHomeTitle{
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
 div.trendingBox{
     margin:5px;
     border: 1px solid white;
@@ -25,6 +37,8 @@ h2.trend{
     display:flex;
     align-items: center;
     flex-direction: column;
+    font-weight: bold;
+    font-size: 1.5rem;
 }
 
 .genreBox{

@@ -1,6 +1,6 @@
 body {
   padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font: 14px "Nunito", Helvetica, Arial, sans-serif;
 }
 
 a {
@@ -53,6 +53,7 @@ h1 {
   background-color: #4f5d75 ;
   color: #ef8354;
 }
+
 .form-container{
   box-sizing: border-box;
   border-radius: 5px;
@@ -100,3 +101,4 @@ h1 {
 .signup-form-link>a:hover{
   color:blue;
 }
+

@@ -6,23 +6,23 @@ append head
 
 block content
     div
-        img(src=imageSrc class="game-thumbnail")
+        img(src=game.imageSrc class="game-thumbnail")
     div
         div
-            h2(class="game-title") #{name}
+            h2(class="game-title") #{game.name}
         div
-            p(id="game-release-date") #{releaseDate}
+            p(id="game-release-date") #{game.releaseDate}
         div
-            //-p(id="game-publisher") #{Publisher.publisherName}
+            p(id="game-publisher") #{game.Publisher.publisherName}
         div
-            //-p(id="game-genre") #{Genre.genreName}
+            p(id="game-genre") #{game.Genre.genreName}
         div
-            p(id="game-platform") #{platforms}
+            p(id="game-platform") #{game.platforms}
     div
         div
             h4(class="description-header") Description
         div
-            p(id="game-description") #{description}
+            p(id="game-description") #{game.description}
 
 
 //- // -----------------------
@@ -31,6 +31,7 @@ block content
 //-     // playing
 //-     // want to play
 //-     // played
+
 //- // reviews form
 //-     // "Post Review" button
 //-     // username div
