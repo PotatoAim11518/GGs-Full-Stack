@@ -54,8 +54,7 @@ h1 {
 .nav-link:hover{
   background-color: #293241ff ;
   color: #ef8354;
-  -moz-transition: opacity .55s ease-in-out;
-  -webkit-transition: opacity .55s ease-in-out;
+  transition: 0.4s ease;
 }
 
 .form-container{
