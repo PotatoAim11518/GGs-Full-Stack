@@ -2,24 +2,52 @@ h1 {
     color: #555555;
 }
 
+body {
+    background-color: #293241ff;
+}
+
+.home-banner {
+    display: flex;
+    background-color: #293241ff; 
+    justify-content: space-around;
+}
+
 .landingWelcome {
     font-weight: bold;
     font-size: 3rem;
-    padding-left: 1.5em;
     padding-top: .5em;
+    justify-content: space-around;
+    color: #ef8354;
+}
+
+#subLogo1 {
+    height: 100px;
+    width: 100px;
+    padding:10px;
+    justify-content: space-around;
+}
+
+#subLogo2 {
+    height: 100px;
+    width: 100px;
+    padding:10px;
+    justify-content: space-around;
+    transform: scaleX(-1);
 }
 
 .genreHomeTitle{
     font-weight: bold;
     font-size: 1.5rem;
+    color: #293241ff ;
 }
 
 div.trendingBox{
-    margin:5px;
-    border: 1px solid white;
+    /* margin:5px; */
     display: flex;
     justify-content: space-around;
     width:auto;
+    background-color: #3d5a80ff;
+    padding-bottom: 10px;
 }
 
 a.trending-game>img{
@@ -29,20 +57,60 @@ a.trending-game>img{
 
 a.trending-game>img:hover{
     box-shadow:0 4px 8px 0 rgba(0, 0, 0, 0.534);
+    width: 98%;
+    transition: 0.4s ease;
 
 }
 
-h2.trend{
+.trend{
     padding: 10px;
     display:flex;
     align-items: center;
     flex-direction: column;
     font-weight: bold;
     font-size: 1.5rem;
+    justify-content: space-between;
+    background-color: #3d5a80ff;
+    color: #e0fbfcff;
 }
 
 .genreBox{
     display:flex;
     align-items: center;
     flex-direction: column;
+    background-color: #98c1d9ff;
 }
+
+
+
+/* Fade in Effect down here */
+
+#trendingGame1 {
+    animation: transitionIn 1s;
+}
+
+#trendingGame2 {
+    animation: transitionIn 1.5s;
+}
+
+#trendingGame3 {
+    animation: transitionIn 2s;
+}
+
+@keyframes transitionIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.genre-hover {
+    color: #293241ff ;
+}
+.genre-hover:hover{
+    background-color: #293241ff ;
+    color: #e0fbfcff;
+    transition: 0.4s ease;
+    }

@@ -1,0 +1,33 @@
+.form-login-container{
+    box-sizing: border-box;
+    margin:auto;
+    margin-top:200px;
+    width:350px;
+    background-color:#e0fbfcff;
+    border-radius: 5px;
+    padding:20px;
+    display:flex;
+    align-items:center;
+    flex-direction:column;
+}
+
+label.login-label{
+    width: 75%;
+    margin-top: 6px;
+    color: #3d5a80ff;
+}
+.signup-link{
+    color:#ee6c4dff;
+    font-size: medium;
+}
+.signup-link:hover{
+    color:#3d5a80ff;
+}
+body{
+    background-image: url("/dualling.jpg") ;
+    -webkit-backgroud-size:cover;
+    -moz-background-size:cover;
+    -o-background-size: cover;
+    background-size:cover;
+    background-color: white;
+}
