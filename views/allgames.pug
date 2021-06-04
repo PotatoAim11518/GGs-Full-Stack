@@ -7,7 +7,7 @@ block content
     div.allGameBox
         h1.allGamesHeader All Games
         div.games
-        each game in games
-            div.game
-                a.games(href=`/games/${game.id}`)
-                    img(src=`${game.imageSrc}` class="gameThumbnail")
+            each game in games
+                div.game
+                    a.games(href=`/games/${game.id}`)
+                        img(src=`${game.imageSrc}` class="gameThumbnail")
