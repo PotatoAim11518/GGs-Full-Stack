@@ -1,3 +1,4 @@
+// /routes/reviews.js
 const express = require('express');
 const { check, validationResult } = require('express-validator');
 
@@ -8,11 +9,11 @@ const { csrfProtection, asyncHandler} = require('./utils');
 
 const router = express.Router();
 
-// GET /games/:gameId/reviews
+// GET /
 router.get(
-  '/games/:id/reviews',
+  '/',
   asyncHandler(async (req, res) => {
-    const gameId = parseInt(req.params.id, 10);
+    // const gameId = parseInt(req.params.id, 10);
     const reviews = await Review.findAll({
       include: [
         {
@@ -23,9 +24,9 @@ router.get(
           model: User,
           attributes: ["username"]
         }],
-      where: {
-        gameId
-      }
+      // where: {
+      //   gameId
+      // }
   });
   res.render('reviews', { reviews })
 }));
@@ -39,20 +40,19 @@ const reviewValidators = [
     .withMessage('Please write a review before submitting!')
 ]
 
-// POST /games/:gameId/reviews
-router.post(
-  '/games/:id/reviews',
+// POST /add
+router.post('/add',
   authUser,
   csrfProtection,
   reviewValidators,
   asyncHandler(async (req, res) => {
+    // const gameId = parseInt(req.params.id, 10);
+    // console.log('====>GAMEID', gameId)
     const { userId } = req.session.auth;
-    console.log('====>SESSION.auth (userId)', req.session.auth)
-    console.log('====>req.PARAMS', req.params)
-    const gameId = parseInt(req.params.id, 10);
-    console.log('====>GAMEID', gameId)
-    console.log('====>REQ.BODY', req.body)
     const { content, rating } = req.body;
+    // console.log('====>SESSION.auth (userId)', req.session.auth)
+    // console.log('====>REQ.PARAMS', req.params)
+    // console.log('====>REQ.BODY', req.body)
 
     const reviews = await Review.findAll({
       where: {
@@ -60,24 +60,24 @@ router.post(
       }
     });
 
+    const currentUserReview = await Review.findAll({
+      where: {
+        gameId,
+        userId,
+      }
+    })
+
+    const newReview = await Review.build({
+      userId,
+      gameId,
+      content,
+      rating
+    });
 
     let errors = [];
     const validatorErrors = validationResult(req);
 
     if (validatorErrors.isEmpty()) {
-      const currentUserReview = await Review.findAll({
-        where: {
-          gameId,
-          userId,
-        }
-      })
-
-      const newReview = await Review.build({
-        userId,
-        gameId,
-        content,
-        rating
-      });
 
       if (!currentUserReview) {
         await newReview.save()
@@ -92,8 +92,8 @@ router.post(
     res.render('reviews', {
       reviews,
       gameId,
+      errors,
       csrfToken: req.csrfToken(),
-      errors
     })
   }
 ));
