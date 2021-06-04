@@ -6,7 +6,7 @@ append head
 
 block content
     div.indivGenreBox
-        h2.indivGenreHeader All Games
+        h2.indivGenreHeader #{games[0].Genre.genreName} Games
         each game in games
             div
                 a(href=`/games/${game.id}`)
