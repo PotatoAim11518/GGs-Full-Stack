@@ -1,5 +1,6 @@
 div.allGameBox {
     margin: auto;
+    background-color: #e0fbfcff;
     border: 1px solid white;
     border-radius: 3px;
     font-weight: 700;
@@ -7,7 +8,7 @@ div.allGameBox {
     position: relative;
 }
 
-div.allGameBox {
+div.games {
     display: flex;
     background-color: #e0fbfcff;
     flex-direction: row;
@@ -15,7 +16,6 @@ div.allGameBox {
     align-items: flex-start;
     justify-content: space-around;
     align-content: space-between;
-
 }
 
 a.games>img {
