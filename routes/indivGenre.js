@@ -1,8 +1,7 @@
 const express = require('express');
 const {
     Game,
-    Genre,
-    Publisher
+    Genre
 } = require('../db/models');
 const {
     asyncHandler

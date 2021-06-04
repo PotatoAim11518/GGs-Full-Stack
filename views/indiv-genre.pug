@@ -1,0 +1,13 @@
+extends layout
+
+append head
+    link(rel="stylesheet" href="/stylesheets/indivGenre.css")
+    script(src="/javascripts/index.js" type="module" defer)
+
+block content
+    div.indivGenreBox
+        h2.indivGenreHeader All Games
+        each game in games
+            div
+                a(href=`/games/${game.id}`)
+                    img(src=`${game.imageSrc}` class="gameThumbnail")
