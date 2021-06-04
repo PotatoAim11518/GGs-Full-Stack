@@ -1,8 +1,7 @@
 const express = require('express');
 const {
     Game,
-    Genre,
-    Publisher
+    Genre
 } = require('../db/models');
 const {
     asyncHandler
@@ -11,26 +10,21 @@ const {
 
 const router = express.Router();
 
-// GET /games/:id
-// "/:id(\\d+)"
 router.get('/:id', asyncHandler(async (req, res) => {
-    const gameId = parseInt(req.params.id, 10)
-    const game = await Game.findOne({
+    const genreId = parseInt(req.params.id, 10)
+    const games = await Game.findAll({
         where: {
-            id: gameId
+            genreId: genreId
         },
         include: [{
             model: Genre,
-            attributes: ["genreName"]
-        }, {
-            model: Publisher,
-            attributes: ["publisherName"]
+            // attributes: ["id" "genreName"]
         }]
 
     });
 
-    res.render('game-home-layout', {
-        game
+    res.render('indiv-genre', {
+        games, genreId
     })
 }));
 

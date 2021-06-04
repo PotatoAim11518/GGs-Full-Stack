@@ -1,55 +1,127 @@
+// /routes/reviews.js
 const express = require('express');
-const { Review, Game } = require('../db/models');
-const { requireAuth } = require('../auth');
-const { csrfProtection, asyncHandler} = require('./utils');
 const { check, validationResult } = require('express-validator');
+
+const { Review, Game, User} = require('../db/models');
+
+const { authUser } = require('../auth');
+const { csrfProtection, asyncHandler} = require('./utils');
 
 const router = express.Router();
 
-// GET /games/:gameId/reviews
-router.get('/games/:gameId/reviews', asyncHandler(async (req, res) => {
-  const gameId = parseInt(req.params.gameId, 10);
+// GET /games/:id/reviews
+router.get('/games/:id/reviews',
+csrfProtection,
+asyncHandler(async (req, res) => {
+  const gameId = parseInt(req.params.id, 10);
+  const game = await Game.findByPk(gameId)
   const reviews = await Review.findAll({
-    include: [ Game ],
-    where: {
-      gameId
-    }
+    include: [
+      {
+        model: Game,
+        attributes: ["name"]
+      },
+      {
+        model: User,
+        attributes: ["username"]
+      }],
+      where: {
+        gameId
+      }
   });
-  // TO DO: figure out how to use the review objects in a template
-  res.render('game', { reviews })
+  res.render('reviews', { reviews, game, csrfToken: req.csrfToken() })
 }));
 
+// Validators for writing a review
 const reviewValidators = [
   check('rating')
     .exists({ checkFalsy: true })
-    .withMessage('Please rate this game!')
+    .withMessage('Please rate this game!'),
+  check('content')
+    .exists({ checkFalsy: true })
+    .withMessage('Please write a review before submitting!')
 ]
 
-// POST /games/:gameId/reviews
-router.post('/games/:gameId/reviews', csrfProtection, requireAuth, reviewValidators,asyncHandler(async (req, res) => {
-  if (req.session.auth) {
-
-    const validatorErrors = validationResult(req);
-
-
-    const gameId = parseInt(req.params.gameId);
+// POST /games/:id/reviews/add
+router.post('/games/:id/reviews/add',
+  authUser,
+  csrfProtection,
+  reviewValidators,
+  asyncHandler(async (req, res) => {
+    const gameId = parseInt(req.params.id, 10);
     const { userId } = req.session.auth;
     const { content, rating } = req.body;
 
-    const review = await Review.create({
+    const game = await Game.findByPk(gameId)
+
+    const reviews = await Review.findAll({
+      include: {
+        model: User,
+        attributes: ["username"]
+      },
+      where: {
+        gameId
+      }
+    });
+
+    const currentUserReview = await Review.findAll({
+      where: {
+        gameId,
+        userId,
+      }
+    })
+
+    const newReview = await Review.build({
       userId,
       gameId,
       content,
       rating
+    });
+
+    let errors = [];
+    const validatorErrors = validationResult(req);
+
+    if (validatorErrors.isEmpty()) {
+
+      if (!currentUserReview.length) {
+        await newReview.save()
+        res.redirect(`/games/${game.id}/reviews`)
+      } else {
+        errors.push('Sorry, you\'ve already written a review for this game.');
+      }
+
+    } else {
+      errors = validatorErrors.array().map( (error) => error.msg );
+    }
+    res.render('reviews', {
+      reviews,
+      game,
+      errors,
+      userId,
+      csrfToken: req.csrfToken(),
     })
-
-  } else {
-    res.redirect('/users/login');
   }
-}));
+));
 
-// DELETE /:reviewsId
-router.delete('/:reviewsId(\\d+)', asyncHandler((req, res) => {
+// DELETE /reviews/:id
+router.post(
+  '/reviews/:id(\\d+)',
+  authUser,
+  csrfProtection,
+  asyncHandler(async (req, res) => {
+    const { userId } = req.session.auth;
+    const reviewId = req.params.id;
+    const currentUserReview = await Review.findOne({
+      where: {
+        id: reviewId,
+        userId,
+      }
+    });
 
-}));
+    const { gameId } = currentUserReview
+    await currentUserReview.destroy();
+    res.redirect(`/games/${gameId}/reviews`);
+  }
+));
+
 module.exports = router;

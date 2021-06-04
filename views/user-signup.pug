@@ -1,18 +1,20 @@
 extends layout.pug
-
+  
 include utils.pug
 
 block content
   +errorReport(errors)
-  form(action='/users/signup' method='post')
-    input(type='hidden' name='_csrf' value=csrfToken)
-    +field('User Name', 'username', user.username)
-    +field('First Name', 'firstName', user.firstName)
-    +field('Last Name', 'lastName', user.lastName)
-    +field('Email Address', 'email', user.email)
-    +field('Password', 'password', user.password, 'password')
-    +field('Confirm Password', 'confirmPassword', user.confirmPassword, 'password')
-    div
-      button(type='submit' class='signup-button') Sign-Up!
-    a(href='/') Cancel
-    a(href='/users/login') Already a User? Login
+  div.form-container
+    form(action='/users/signup' method='post')
+      input(type='hidden' name='_csrf' value=csrfToken)
+      +field('User Name', 'username', user.username)
+      +field('First Name', 'firstName', user.firstName)
+      +field('Last Name', 'lastName', user.lastName)
+      +field('Email Address', 'email', user.email)
+      +field('Password', 'password', user.password, 'password')
+      +field('Confirm Password', 'confirmPassword', user.confirmPassword, 'password')
+      div
+        button(type='submit' class='signup-button') Sign-Up!
+        div.signup-form-link
+          a(href='/users/login') Already a User? Login
+          a(href='/') Cancel
