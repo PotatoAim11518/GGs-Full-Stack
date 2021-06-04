@@ -1,14 +1,12 @@
 extends layout
 
 append head
-    //- add page specific styles by appending to the head
     link(rel="stylesheet" href="/stylesheets/allGames.css")
-    //- add page specific js
     script(src="/javascripts/index.js" type="module" defer)
 block content
     div.allGameBox
-        h2.allGamesHeader All Games
+        h1.allGamesHeader All Games
         each game in games
             div
-                a(href=`/games/${game.id}`)
+                a.games(href=`/games/${game.id}`)
                     img(src=`${game.imageSrc}` class="gameThumbnail")
