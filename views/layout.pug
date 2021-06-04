@@ -8,10 +8,10 @@ html
     block body
       append body
         nav.nav-container
-          div
+          a(href='/')
+            img.logo-img(src="/logo.png")
+          div(class="navbar-sameLine")
             div(class="navbar-left")
-              a(href='/')
-                img.logo-img(src="/logo.png")
               a.nav-item.nav-link(href='/allGames') Games
               a.nav-item.nav-link(href='/allGenres') Genres
               a.nav-item.nav-link(href='/allPublishers') Publishers
