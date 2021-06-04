@@ -12,20 +12,22 @@ const {
 const router = express.Router();
 
 
-router.get('genre/:id', asyncHandler(async (req, res) => {
-                    const genreId = parseInt(req.params.id, 10)
-                    const genre = await Genre.findAll({
-                        where: {
-                            id: gameId
-                        },
-                        include: [{
-                            model: Genre,
-                            attributes: ["genreName"]
-                        }, {
-                            model: Publisher,
-                            attributes: ["publisherName"]
-                        }]
+router.get('games/genreId/:id', asyncHandler(async (req, res) => {
+    const genreId = parseInt(req.params.id, 10)
+    const genre = await Genre.findAll({
+        where: {
+            id
+        },
+        include: [{
+            model: Games,
+            attributes: ["name", "imageSrc"]
+        }]
 
-                    });
+    });
+
+    res.render('all-genres', {
+        genre
+    })
+}));
 
 module.exports = router;

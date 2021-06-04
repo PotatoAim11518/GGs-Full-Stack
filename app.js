@@ -45,7 +45,7 @@ app.use(restoreUser);
 app.use('/', indexRouter);
 app.use('/games', gamesRouter);
 app.use('/users', usersRouter);
-app.use('/genres'.genresRouter)
+app.use('/genres', genresRouter)
 // app.use(reviewsRouter);
 
 
