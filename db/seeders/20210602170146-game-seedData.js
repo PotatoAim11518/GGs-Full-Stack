@@ -217,7 +217,7 @@ module.exports = {
       genreId: 4,
       publisherId: 17,
       platforms: "Nintendo Switch",
-      imageSrc: "https://m.media-amazon.com/images/I/810s0mZFKcL._SS500_.jpg",
+      imageSrc: "https://f4.bcbits.com/img/a4218237573_10.jpg",
       releaseDate: "March 24, 2015",
         createdAt: new Date(),
         updatedAt: new Date()
