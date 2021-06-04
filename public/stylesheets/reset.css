@@ -25,3 +25,31 @@ body, header, nav {
 h1 {
   font-size: 2rem;
 }
+
+.nav-container{
+  margin:0;
+  padding:0;
+  overflow:hidden;
+  background-color: #ef8354 ;
+}
+.logo-img{
+  height: 100px;
+  width: 100px;
+  margin-right: 200px;
+  float:left;
+  padding-left:10px;
+}
+.nav-item{
+  display:inline-flex;
+  padding: 14px 16px;
+  background-color: #ef8354;
+}
+.nav-link{
+  color: #ffffff;
+  text-align: center;
+  text-decoration: none;
+}
+.nav-link:hover{
+  background-color: #4f5d75 ;
+  color: #ef8354;
+}
