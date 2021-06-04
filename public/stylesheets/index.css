@@ -3,14 +3,18 @@ h1 {
 }
 div.trendingBox{
     margin:5px;
-    border: 1px solid #ccc;
+    border: 1px solid white;
     display: flex;
-    width:180px;
+    justify-content: space-around;
+    width:auto;
 }
-div.trendingBox:hover{
-    border:1px solid #777;
+.trending-game:hover{
 }
 a.trending-game>img{
     max-width: 350px;
     height:auto;
+}
+a.trending-game>img:hover{
+    box-shadow:0 4px 8px 0 rgba(0, 0, 0, 0.534);
+
 }
