@@ -18,3 +18,7 @@ block content
       button(type='submit') Login
     div
       p: a(href='/users/signup') New to GGs? Sign up here!
+  form(action='/users/login/demo', method='post')#login-form
+    input(type='hidden', name='_csrf', value=csrfToken)
+    div
+      button(type='submit') Demo User Login
