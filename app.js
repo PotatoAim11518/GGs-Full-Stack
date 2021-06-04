@@ -49,7 +49,7 @@ app.use('/games', gamesRouter);
 app.use('/users', usersRouter);
 app.use('/allGenres', allGenresRouter);
 app.use('/allGames', allGamesRouter);
-app.use('indivGenre', indivGenreRouter)
+app.use('/genres', indivGenreRouter)
 // app.use(reviewsRouter);
 
 
