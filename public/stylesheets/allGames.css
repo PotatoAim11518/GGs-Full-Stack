@@ -1,64 +1,29 @@
 div.allGameBox {
-    /* display: flex; */
-    justify-content: center;
-    background-color: #e0fbfcff;
-
-}
-
-h1.allgamesHeader {
-    /* display: flex;
-    justify-content: center;
-    text-align: center;
-    color: #3d5a80ff;
-    font-size: 24px; */
-    padding: 30px;
-    display:flex;
-    align-items: center;
-    flex-direction: column;
-    font-weight: bold;
-    font-size: 1.5rem;
-}
-
-
-
-div.allGameBox {
-    margin:5px;
+    margin: auto;
     border: 1px solid white;
     border-radius: 3px;
-    box-sizing: border-box;
     font-weight: 700;
-    height: 150px;
-    margin: 0 8px 16px;
-    max-width: 250px;
     padding: 4px 8px;
     position: relative;
-    width: 25%;
-    /* display: flex;
-    flex-direction: column;
+}
+
+div.allGameBox {
+    display: flex;
+    background-color: #e0fbfcff;
+    flex-direction: row;
     flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: center; */
+    align-items: flex-start;
+    justify-content: space-around;
+    align-content: space-between;
+
 }
 
-a.games > img {
+a.games>img {
     max-width: 150px;
-    height:auto;
+    height: auto;
+    margin: 10px;
 }
+
 a.games>img.gameThumbnail:hover {
-    /* max-width: 150px;
-    height: auto; */
-    box-shadow:0 4px 8px 0 rgba(0, 0, 0, 0.534);
-}
-
-@media screen and (min-width: 750px) and (max-width: 1280px) {
-    .boards__board {
-        width: 33%;
-    }
-}
-
-@media screen and (min-width: 750px) {
-    .boards__board {
-        width: 100%;
-        max-width: unset;
-    }
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.534);
 }
