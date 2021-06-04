@@ -27,7 +27,7 @@ module.exports = {
       genreId: 2,
       publisherId: 3,
       platforms: "PC",
-      imageSrc: "https://esportsobserver.com/wp-content/uploads/2019/05/dota-2-russia.png",
+      imageSrc: "https://i.pinimg.com/736x/d1/59/e9/d159e9ca272b73f56ef2b770a7c0b17b.jpg",
       releaseDate: "July 9, 2013",
         createdAt: new Date(),
         updatedAt: new Date()
