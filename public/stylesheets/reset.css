@@ -53,8 +53,6 @@ h1 {
   color: #ffffff;
   text-align: center;
   text-decoration: none;
-  -moz-transition: opacity .55s ease-in-out;
-  -webkit-transition: opacity .55s ease-in-out;
 }
 .nav-link:hover{
   background-color: #293241ff ;
@@ -116,15 +114,3 @@ h1 {
   justify-content: space-between;
   padding-top: 3em;
 }
-/* .navbar-right {
-  display: flex;
-  align-items: flex-end;
-  align-self: flex-end;
-  justify-content: flex-end;
-  position: relative;
-}
-
-.navbar-left {
-  display: flex;
-  position: relative;
-} */

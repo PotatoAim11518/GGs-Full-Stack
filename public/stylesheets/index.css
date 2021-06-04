@@ -51,6 +51,7 @@ h2.trend{
     display:flex;
     align-items: center;
     flex-direction: column;
+    background-color: #98c1d9ff;
 }
 
 
@@ -77,3 +78,9 @@ h2.trend{
         opacity: 1;
     }
 }
+
+.genre-hover:hover{
+    background-color: #293241ff ;
+    color: #e0fbfcff;
+    transition: 0.4s ease;
+    }
