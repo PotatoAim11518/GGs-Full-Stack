@@ -6,8 +6,8 @@ append head
 block content
     div.allGameBox
         h1.allGamesHeader All Games
-        div
+        div.games
         each game in games
-            div.games
+            div.game
                 a.games(href=`/games/${game.id}`)
                     img(src=`${game.imageSrc}` class="gameThumbnail")
