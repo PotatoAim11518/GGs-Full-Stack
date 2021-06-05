@@ -1,7 +1,7 @@
 div.allGameBox {
     margin: auto;
     background-color: #e0fbfcff;
-    border: 1px solid white;
+    border: 1px solid #e0fbfcff;;
     border-radius: 3px;
     font-weight: 700;
     padding: 4px 8px;
@@ -26,4 +26,15 @@ a.games>img {
 
 a.games>img.gameThumbnail:hover {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.534);
+}
+
+.allGamesHeader {
+    display: flex;
+    font-weight: bold;
+    color: #293241ff;
+    justify-content: space-around;
+}
+
+body {
+    background-color: #e0fbfcff;
 }
