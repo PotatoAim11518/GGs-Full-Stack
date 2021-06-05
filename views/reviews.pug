@@ -32,6 +32,11 @@ block content
           #game-platform.game__info-header Platform
           div.info-text
             p #{game.platforms}
+          #game-avg-rating.game__info-header Average User Rating
+          div.info-text
+            p.avg-rating #{avgRating}
+              span#rating-icon-span
+                img(src='/favicon.ico')#rating-icon
 
     .reviews__container
       .reviews__form
@@ -59,7 +64,10 @@ block content
       .reviews__list
         each review in reviews
           .reviews__reviewContainer
-            h3.reviews__username #{review.User.username}
+            h2.reviews__username #{review.User.username}
+            h3.rating-text #{review.rating}
+              span#rating-icon-span
+                img(src='/favicon.ico')#rating-icon
             .reviews__reviewText
               p= review.content
             if (userId == review.userId)

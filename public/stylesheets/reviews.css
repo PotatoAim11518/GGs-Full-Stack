@@ -162,3 +162,16 @@ textarea {
   color: white;
   background-color: rgb(170, 0, 0);
 }
+
+#rating-icon {
+  width: 20px;
+  height: auto;
+}
+#rating-icon-span {
+  padding-left: 5px;
+
+}
+
+.rating-text {
+  text-align: left;
+}
