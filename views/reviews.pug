@@ -51,7 +51,7 @@ block content
           h3.reviews__username #{review.User.username}
           .reviews__reviewText
             p= review.content
-          if (userId === review.userId)
+          if (userId == review.userId)
             .review__delete-btn.review__delete-btn--loggedout
               form(action=`/reviews/${review.id}`, method="post")
                 input(type='hidden', name='_csrf', value=csrfToken)

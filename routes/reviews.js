@@ -15,8 +15,10 @@ router.get('/games/:id/reviews',
 csrfProtection,
 asyncHandler(async (req, res) => {
   const gameId = parseInt(req.params.id, 10);
-  const userId = res.locals.user.id ? res.locals.user.id : null;
-  console.log(res.locals.user.id)
+  let userId;
+  try {
+    userId = req.session.auth.userId ? req.session.auth.userId : null;
+  } catch {}
   const game = await Game.findByPk(gameId, {
     include: [
       { model: Publisher,
