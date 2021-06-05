@@ -105,3 +105,64 @@ h1 {
   justify-content: space-between;
   padding-top: 3em;
 }
+/* search */
+.search-container{
+  max-width:450px;
+  margin:auto;
+}
+.search-container .search-input{
+  background: #ffffff;
+  width:100%;
+  border-radius: 5px;
+  position: relative;
+  box-shadow: 0px 1px 5px 3px rgba(0,0,0,0.2);
+}
+.search-input input{
+  height: 55px;
+  width:100%;
+  outline:none;
+  border: none;
+  border-radius: 5px;
+  padding: 0 60px 0 20px;
+  font-size: 14px;
+  box-shadow: 0px 1px 5px rgba(0,0,0,0.1);
+}
+.search-input.active input{
+  border-radius: 5px 5px 0 0;
+}
+.search-input .autocom-box{
+  padding: 0;
+  opacity: 0;
+  pointer-events: none;
+  max-height: 280px;
+  overflow-y: auto;
+}
+.search-input.active .autocom-box{
+  padding: 10px 8px;
+  opacity: 1;
+  pointer-events: auto;
+}
+.autocom-box li{
+  list-style: none;
+  padding: 8px 12px;
+  display: none;
+  width: 100%;
+  cursor: default;
+  border-radius: 3px;
+}
+.search-input.active .autocom-box li{
+  display: block;
+}
+.autocom-box li:hover{
+  background: #efefef;
+}
+.search-input .search-icon{
+  position: absolute;
+  right: 0px;
+  top: 0px;
+  height: 20px;
+  width: 20px;
+  text-align: center;
+  color: #644bff;
+  cursor: pointer;
+}
