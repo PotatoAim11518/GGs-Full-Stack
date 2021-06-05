@@ -10,7 +10,7 @@ h1.allGamesHeader {
 div.allGameBox {
     margin: auto;
     background-color: #293241ff;
-    /* border: 1px solid white; */
+    border: 1px solid #293241ff;
     border-radius: 3px;
     font-weight: 700;
     padding: 4px 8px;
@@ -31,8 +31,29 @@ a.games>img {
     max-width: 150px;
     height: auto;
     margin: 10px;
+    animation: transitionIn 2s;
 }
 
 a.games>img.gameThumbnail:hover {
     box-shadow: 0 4px 8px 0 rgba(245, 239, 239, 0.534);
+}
+
+.allGamesHeader {
+    display: flex;
+    font-weight: bold;
+    color: #ef8354 ;
+    justify-content: space-around;
+}
+
+body {
+    background-color: #293241ff;
+}
+
+@keyframes transitionIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
