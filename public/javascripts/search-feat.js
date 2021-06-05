@@ -3,27 +3,14 @@ const inputBox = searcher.querySelector("input");
 const suggestionBox = searcher.querySelector(".autocom-box");
 const icon = searcher.querySelector(".search-icon");
 let linkTag = searcher.querySelector("a");
-// const { Game } = require('../db/models');
-// const { asyncHandler } = require('./router/utils')
-
-
 let webLink;
 // if user press any key and release
 inputBox.onkeyup = (e)=>{
     let userData = e.target.value; //user enetered data
     let newArray = [];
-    /*get gameData*/
-    // const gameId = asyncHandler(async() => {
-    //     const game = await Game.findOne({
-    //         where:{
-    //             name:UserData
-    //         }
-    //     })
-    //       return game.id;      
-    // })
     if(userData){
         icon.onclick = ()=>{
-            webLink = "localhost:8080/games/"+ gameId;
+            webLink = "localhost:8080/games/"+ gameId(userData);
             linkTag.setAttribute("href", webLink);
             linkTag.click();
         }
@@ -46,6 +33,15 @@ inputBox.onkeyup = (e)=>{
         searcher.classList.remove("active"); //hide autocomplete box
     }
 }
+/*get gameData*/
+const gameId = (async(UserData) => {
+    const game = await Game.findOne({
+        where:{
+            name:UserData
+        }
+    })
+  return game.id      
+})
 function select(element){
     let selectData = element.textContent;
     inputBox.value = selectData;
