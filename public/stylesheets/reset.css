@@ -21,11 +21,14 @@ body, header, nav {
 h1 {
   font-size: 2rem;
 }
+
 .nav-container{
   margin:0;
   padding:0;
   overflow:hidden;
   background-color: #ef8354 ;
+  position: sticky;
+  top: 0px;
 }
 .logo-img{
   height: 100px;

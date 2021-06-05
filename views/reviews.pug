@@ -1,58 +1,77 @@
 extends layout
-
 include utils.pug
 
+append head
+    link(rel="stylesheet" href="/stylesheets/reviews.css")
+    script(src="/javascripts/index.js" type="module" defer)
+
 block content
+  .page-container
+    img(src=game.imageSrc id="background-image")
+    .game__container
+      .game__container-card
+        .game__thumbnail-image
+          img(src=game.imageSrc id="thumbnail-image")
+        .game-title
+          h1 #{game.name}
+      .game__container-text
+        .game-description
+          .game-description__header.game__info-header Description
+            .game-description__text
+              p #{game.description}
+        .game__info
+          #game-release-date.game__info-header Released
+          div.info-text
+            p #{game.releaseDate}
+          #game-publisher.game__info-header Publisher
+          div.info-text
+            a(href=`/publishers/${game.Publisher.id}`) #{game.Publisher.publisherName}
+          #game-genre.game__info-header Genre
+          div.info-text
+            a(href=`/genres/${game.Genre.id}`) #{game.Genre.genreName}
+          #game-platform.game__info-header Platform
+          div.info-text
+            p #{game.platforms}
+          #game-avg-rating.game__info-header Average User Rating
+          div.info-text
+            p.avg-rating #{avgRating}
+              span#rating-icon-span
+                img(src='/favicon.ico')#rating-icon
 
-  .game__container
-    .game__thumbnail-image
-      img(src=game.imageSrc class="game-thumbnail")
-    .game__info
-      .game-title.game__info-header Title
-        h2 #{game.name}
-      .game-release-date.game__info-header Release Date
-        p #{game.releaseDate}
-      .game-publisher.game__info-header Publisher
-        p #{game.Publisher.publisherName}
-      .game-genre.game__info-header Genre
-        p #{game.Genre.genreName}
-      .game-platform.game__info-header Platform
-        p #{game.platforms}
-      .game-description__header.game__info-header Description
-        .game-description__text
-          p #{game.description}
-
-  .reviews__container
-    .reviews__form
-    h1 Add a review for #{game.name}
-    +errorReport(errors)
-    form(action=`/games/${game.id}/reviews/add`, method="post")
-      input(type='hidden', name='_csrf', value=csrfToken)
-      div
-        label(for="rating") Rate this game:
-      div
-        input(type="range", name="rating", min="0", max="5", step="0.1", list="geese" value=rating)
-        datalist#geese
-          option(value="0", label="0")
-          option(value="1", label="1")
-          option(value="2", label="2")
-          option(value="3", label="3")
-          option(value="4", label="4")
-          option(value="5", label="5")
-      div
-        label(for="content") Review
-      div
-        textarea(name="content", cols="80", rows="10", value=content)
-      div
-        button(type="submit") Post Review
-    .reviews__list
-      each review in reviews
-        .reviews__reviewContainer
-          h3.reviews__username #{review.User.username}
-          .reviews__reviewText
-            p= review.content
-          if (userId == review.userId)
-            .review__delete-btn.review__delete-btn--loggedout
-              form(action=`/reviews/${review.id}`, method="post")
-                input(type='hidden', name='_csrf', value=csrfToken)
-                button(type="submit") Delete
+    .reviews__container
+      .reviews__form
+      h1 Add a review for #{game.name}
+      +errorReport(errors)
+      form(action=`/games/${game.id}/reviews/add`, method="post")
+        input(type='hidden', name='_csrf', value=csrfToken)
+        .reviews__rating-label
+          label(for="rating") Rate this game:
+        .reviews__rating-slider
+          input(type="range", name="rating", min="0", max="5", step="0.1", list="geese" value=rating)
+          datalist#geese
+            option(value="0", label="0")
+            option(value="1", label="1")
+            option(value="2", label="2")
+            option(value="3", label="3")
+            option(value="4", label="4")
+            option(value="5", label="5")
+        .reviews__review-label
+          label(for="content")
+        .reviews__review-content
+          textarea(name="content", cols="80", rows="10", value=content)
+        div
+          button(type="submit").reviews__review-btn Post Review
+      .reviews__list
+        each review in reviews
+          .reviews__reviewContainer
+            h2.reviews__username #{review.User.username}
+            h3.rating-text #{review.rating}
+              span#rating-icon-span
+                img(src='/favicon.ico')#rating-icon
+            .reviews__reviewText
+              p= review.content
+            if (userId == review.userId)
+              .review__delete-btn
+                form(action=`/reviews/${review.id}`, method="post")
+                  input(type='hidden', name='_csrf', value=csrfToken)
+                  button(type="submit")#delete-review Delete

@@ -21,12 +21,8 @@ asyncHandler(async (req, res) => {
   } catch {}
   const game = await Game.findByPk(gameId, {
     include: [
-      { model: Publisher,
-        attributes: ["publisherName"]
-      },
-      { model: Genre,
-        attributes: ["genreName"]
-      },
+      { model: Publisher },
+      { model: Genre },
     ]
   });
   const reviews = await Review.findAll({
@@ -43,10 +39,28 @@ asyncHandler(async (req, res) => {
         gameId
       }
   });
+
+  const calcAvgReview = (reviews) => {
+    let total = 0;
+    let count = 0;
+    for (const review of reviews) {
+      let rating = parseFloat(review.rating)
+      total += rating;
+      ++count;
+    }
+    try {
+      return (total / count) ? (total / count).toFixed(1) : "Not enough reviews"
+    } catch {}
+  }
+
+  const avgRating = calcAvgReview(reviews)
+  console.log(avgRating)
+
   res.render('reviews', {
     reviews,
     userId,
     game,
+    avgRating,
     csrfToken: req.csrfToken() })
 }));
 
