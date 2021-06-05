@@ -8,7 +8,7 @@ body {
 
 .home-banner {
     display: flex;
-    background-color: #293241ff; 
+    background-color: #293241ff;
     justify-content: space-around;
 }
 
@@ -41,24 +41,41 @@ body {
     color: #293241ff ;
 }
 
-div.trendingBox{
-    /* margin:5px; */
+div.trendingBox {
     display: flex;
     justify-content: space-around;
-    width:auto;
     background-color: #3d5a80ff;
-    padding-bottom: 10px;
+    max-height: 500px;
+    padding: 10px;
+    /* width:auto; */
+    /* padding-bottom: 10px; */
+}
+
+.trendingBox__card {
+    max-height: 450px;
+    width: auto;
+    /* margin: 0px 0px 10px 0px; */
 }
 
 a.trending-game>img{
-    max-width: 350px;
-    height:auto;
+    max-height: 450px;
+    width: auto;
+    margin: 10px;
+    /* width: auto; */
+    /* max-height: 350px; */
+    /* width: 90%; */
+    /* margin: 20px; */
+    /* position: relative; */
+    /* top: 0; */
+    /* left: 0; */
+    /* transition: width 1s, height 1s, left 1s, margin 1s; */
 }
 
 a.trending-game>img:hover{
-    box-shadow:0 4px 8px 0 rgba(0, 0, 0, 0.534);
-    width: 98%;
-    transition: 0.4s ease;
+    /* box-shadow:0 4px 8px 0 rgba(0, 0, 0, 0.534); */
+    /* width: 95%; */
+    /* transition: 0.4s ease; */
+    /* margin: -15px; */
 
 }
 
@@ -75,10 +92,11 @@ a.trending-game>img:hover{
 }
 
 .genreBox{
-    display:flex;
+    display: flex;
     align-items: center;
     flex-direction: column;
     background-color: #98c1d9ff;
+
 }
 
 
