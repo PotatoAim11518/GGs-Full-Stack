@@ -5,6 +5,8 @@ body {
 
 h1.allGamesHeader {
     color: lightgray;
+    display: flex;
+    justify-content: space-around;
 }
 
 div.allGameBox {
@@ -22,7 +24,7 @@ div.games {
     background-color: #293241ff;
     flex-direction: row;
     flex-wrap: wrap;
-    align-items: flex-start;
+    align-items: center;
     justify-content: space-around;
     align-content: space-between;
 }
