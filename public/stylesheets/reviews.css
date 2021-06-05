@@ -29,6 +29,7 @@ body {
   opacity: 90%;
   color: #E0FBFC;
   box-shadow: 5px 5px 10px 5px #111;
+  margin-bottom: 40px;
 }
 
 .game__container-card {
@@ -81,13 +82,11 @@ div.game__info-header {
   background: linear-gradient(0.5turn, rgb(49, 72, 102), #293241ff );
 }
 
-
-
 .reviews__container {
   display: flex;
   flex-direction: column;
   position: absolute;
-  top: 720px;
+  top: 90vh;
   align-items: center;
   background-color: #293241ff;
   opacity: 90%;
@@ -109,6 +108,20 @@ textarea {
 
 .reviews__review-btn {
   float: right;
+  background-color: #ef8354;
+  border: none;
+  color: black;
+  padding: 8px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  box-shadow: 2px 2px 2px 2px #111;
+  transition: background-color 0.3s, color 0.3s;
+}
+.reviews__review-btn:hover {
+  color: white;
+  background-color:rgb(9, 138, 9);
 }
 
 .reviews__reviewContainer {
@@ -117,7 +130,6 @@ textarea {
   margin: 40px;
   box-shadow: 5px 5px 10px 5px #111;
   width: 600px;
-
 }
 
 .reviews__username {
@@ -125,6 +137,7 @@ textarea {
   font-weight: bold;
   font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
+
 .reviews__reviewText {
 
 }
@@ -134,12 +147,18 @@ textarea {
 
 #delete-review {
   float: right;
-  background-color: rgb(170, 0, 0);
+  background-color: darkgray;
   border: none;
-  color: white;
+  color: black;
   padding: 8px 20px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
+  box-shadow: 2px 2px 2px 2px #111;
+  transition: background-color 0.3s, color 0.3s;
+}
+#delete-review:hover {
+  color: white;
+  background-color: rgb(170, 0, 0);
 }

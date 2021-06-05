@@ -54,8 +54,8 @@ block content
           label(for="content")
         .reviews__review-content
           textarea(name="content", cols="80", rows="10", value=content)
-        .reviews__review-btn
-          button(type="submit") Post Review
+        div
+          button(type="submit").reviews__review-btn Post Review
       .reviews__list
         each review in reviews
           .reviews__reviewContainer
