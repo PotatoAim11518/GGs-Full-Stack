@@ -1,14 +1,14 @@
 extends layout
 
 append head
-    //- add page specific styles by appending to the head
-    link(rel="stylesheet" href="/stylesheets/allGenres.css")
-    //- add page specific js
+    link(rel="stylesheet" href="/stylesheets/allGensPubs.css")
     script(src="/javascripts/index.js" type="module" defer)
 block content
-    .publishers-container
-        h1 All Publishers
-        .publishers-container__thumbnails
-            each publisher in publishers
-                div
-                    a(href=`/publishers/${publisher.id}`) #{publisher.publisherName}
+    body
+        .publishers-container
+            div.header
+                h1 All Publishers
+            .publishers-container__thumbnails
+                each publisher in publishers
+                    div.all__gens-pubs
+                        a(href=`/publishers/${publisher.id}`) #{publisher.publisherName}

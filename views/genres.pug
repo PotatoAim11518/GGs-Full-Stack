@@ -1,14 +1,14 @@
 extends layout
 
 append head
-    //- add page specific styles by appending to the head
-    link(rel="stylesheet" href="/stylesheets/allGenres.css")
-    //- add page specific js
+    link(rel="stylesheet" href="/stylesheets/allGensPubs.css")
     script(src="/javascripts/index.js" type="module" defer)
 block content
-    .genres-container
-        h1 All Genres
-        .genres-container__thumbnails
-            each genre in genres
-                div
-                    a(href=`/genres/${genre.id}`) #{genre.genreName}
+    body
+        .genres-container
+            div.header
+                h1.all__gens-pubs All Genres
+            .genres-container__thumbnails
+                each genre in genres
+                    div.all__gens-pubs
+                        a(href=`/genres/${genre.id}`) #{genre.genreName}
