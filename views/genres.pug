@@ -8,7 +8,7 @@ block content
         .genres-container
             .header
                 h1.all__gens-pubsHeader All Genres
-                    .genres-container__thumbnails
-                        each genre in genres
-                            div.all__gens-pubs
-                                a.all__gens-pubs(href=`/genres/${genre.id}`) #{genre.genreName}
+                .genres-container__thumbnails
+                    each genre in genres
+                        div.all__gens-pubs
+                            a.all__gens-pubs(href=`/genres/${genre.id}`) #{genre.genreName}
