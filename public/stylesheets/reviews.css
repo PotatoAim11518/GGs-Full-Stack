@@ -1,0 +1,145 @@
+body {
+  background-color: #293241ff;
+}
+
+.page-container {
+  position: sticky;
+  top: 0px;
+  display: flex;
+  justify-content: center;
+}
+
+#background-image {
+  width: 100vw;
+  position: fixed;
+  filter: blur(10px) grayscale(70%);
+  background: {
+    repeat: no-repeat;
+    size: cover;
+    position: center;
+  }
+}
+
+.game__container {
+  display: flex;
+  position: absolute;
+  top: 80px;
+  width: 90vw;
+  background-color: #293241ff;
+  opacity: 90%;
+  color: #E0FBFC;
+  box-shadow: 5px 5px 10px 5px #111;
+}
+
+.game__container-card {
+  background-color: #293241ff;
+  opacity: 100%;
+  color: #E0FBFC
+}
+
+.game__container-text {
+  background-color: #293241ff;
+  opacity: 100%;
+  color: #E0FBFC
+}
+
+#thumbnail-image {
+  max-width: 30vw;
+  max-height: 30vw;
+  margin: 20px;
+  box-shadow: 5px 5px 10px 5px #111;
+  opacity: 100%;
+}
+
+.game__info {
+  margin: 20px;
+  padding-bottom: 20px;
+}
+
+.game-title {
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-weight: 700;
+  margin: 20px;
+  text-align: center;
+}
+
+div.game__info-header {
+  font-size: x-large;
+}
+.info-text {
+  font-family: sans-serif;
+  margin: 5px;
+  border-bottom: 1px solid #293241ff;
+}
+
+.game-description {
+  padding: 20px;
+}
+.game-description__header,
+.game__info {
+  padding: 20px;
+  background: linear-gradient(0.5turn, rgb(49, 72, 102), #293241ff );
+}
+
+
+
+.reviews__container {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 720px;
+  align-items: center;
+  background-color: #293241ff;
+  opacity: 90%;
+  color: #E0FBFC;
+  box-shadow: 5px 5px 10px 5px #111;
+  padding: 20px;
+}
+
+
+
+.reviews__rating-label {
+  font-size: larger;
+}
+
+textarea {
+  width: 600px;
+  height: 150px;
+}
+
+.reviews__review-btn {
+  float: right;
+}
+
+.reviews__reviewContainer {
+  border-radius: 3px;
+  padding: 10px 30px;
+  margin: 40px;
+  box-shadow: 5px 5px 10px 5px #111;
+  width: 600px;
+
+}
+
+.reviews__username {
+  color: #ef8354;
+  font-weight: bold;
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+.reviews__reviewText {
+
+}
+
+.review__delete-btn {
+}
+
+#delete-review {
+  float: right;
+  background-color: rgb(170, 0, 0);
+  border: none;
+  color: white;
+  padding: 8px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}

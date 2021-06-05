@@ -21,12 +21,8 @@ asyncHandler(async (req, res) => {
   } catch {}
   const game = await Game.findByPk(gameId, {
     include: [
-      { model: Publisher,
-        attributes: ["publisherName"]
-      },
-      { model: Genre,
-        attributes: ["genreName"]
-      },
+      { model: Publisher },
+      { model: Genre },
     ]
   });
   const reviews = await Review.findAll({
