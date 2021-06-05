@@ -19,7 +19,7 @@ inputBox.onkeyup = (e)=>{
     //             name:UserData
     //         }
     //     })
-    //       return Game.id;      
+    //       return game.id;      
     // })
     if(userData){
         icon.onclick = ()=>{
