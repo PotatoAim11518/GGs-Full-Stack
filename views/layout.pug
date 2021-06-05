@@ -7,17 +7,24 @@ html
   body
     block body
       append body
-        nav.nav-container
-          div
-            a(href='/')
-              img.logo-img(src="/logo.png")
-            div(class="navbar-sameLine")
-              div(class="navbar-left")
-                a.nav-item.nav-link(href='/games') Games
-                a.nav-item.nav-link(href='/genres') Genres
-                a.nav-item.nav-link(href='/publishers') Publishers
-              div(class="navbar-right")
+        .nav-container
+          a(href='/')
+            img.logo-img(src="/logo.png")
+          .login-status
+            if (locals.authenticated)
+              p.logged-in-message Signed in as #{locals.user.username}
+              img(src='/favicon.ico')#logged-in-icon
+            else
+              p.logged-in-message Not a member? Sign up below!
+          .nav-container__contents
+            .navbar-left
+              a.nav-item.nav-link(href='/games') Games
+              a.nav-item.nav-link(href='/genres') Genres
+              a.nav-item.nav-link(href='/publishers') Publishers
+            .navbar-right
+              if (!locals.authenticated)
                 a.nav-item.nav-link(href='/users/login') Sign in
                 a.nav-item.nav-link(href='/users/signup') Sign up
+              if (locals.authenticated)
                 a.nav-item.nav-link(href='/users/logout') Log Out
     block content
