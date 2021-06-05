@@ -6,9 +6,9 @@ append head
 block content
     body
         .genres-container
-            div.header
-                h1.all__gens-pubs All Genres
-            .genres-container__thumbnails
-                each genre in genres
-                    div.all__gens-pubs
-                        a(href=`/genres/${genre.id}`) #{genre.genreName}
+            .header
+                h1.all__gens-pubsHeader All Genres
+                    .genres-container__thumbnails
+                        each genre in genres
+                            div.all__gens-pubs
+                                a.all__gens-pubs(href=`/genres/${genre.id}`) #{genre.genreName}
