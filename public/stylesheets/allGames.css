@@ -1,7 +1,7 @@
 div.allGameBox {
     margin: auto;
-    background-color: #e0fbfcff;
-    border: 1px solid #e0fbfcff;;
+    background-color: #293241ff;
+    border: 1px solid #293241ff;
     border-radius: 3px;
     font-weight: 700;
     padding: 4px 8px;
@@ -10,7 +10,7 @@ div.allGameBox {
 
 div.games {
     display: flex;
-    background-color: #e0fbfcff;
+    background-color: #293241ff;
     flex-direction: row;
     flex-wrap: wrap;
     align-items: flex-start;
@@ -22,6 +22,7 @@ a.games>img {
     max-width: 150px;
     height: auto;
     margin: 10px;
+    animation: transitionIn 2s;
 }
 
 a.games>img.gameThumbnail:hover {
@@ -31,10 +32,19 @@ a.games>img.gameThumbnail:hover {
 .allGamesHeader {
     display: flex;
     font-weight: bold;
-    color: #293241ff;
+    color: #ef8354 ;
     justify-content: space-around;
 }
 
 body {
-    background-color: #e0fbfcff;
+    background-color: #293241ff;
+}
+
+@keyframes transitionIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }

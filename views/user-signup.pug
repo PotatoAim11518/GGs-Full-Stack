@@ -2,8 +2,14 @@ extends layout.pug
   
 include utils.pug
 
+append head
+    link(rel="stylesheet" href="/stylesheets/signup.css")
+    script(src="/javascripts/index.js" type="module" defer)
+
 block content
   +errorReport(errors)
+  .page-container
+    img(src="https://images.unsplash.com/photo-1579407364450-481fe19dbfaa?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MzZ8fHZpZGVvJTIwZ2FtZXxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" id="background-image")
   div.form-container
     form(action='/users/signup' method='post')
       input(type='hidden' name='_csrf' value=csrfToken)
