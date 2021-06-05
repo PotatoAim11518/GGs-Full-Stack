@@ -11,7 +11,7 @@ let webLink;
 // if user press any key and release
 inputBox.onkeyup = (e)=>{
     let userData = e.target.value; //user enetered data
-    let emptyArray = [];
+    let newArray = [];
     /*get gameData*/
     // const gameId = asyncHandler(async() => {
     //     const game = await Game.findOne({
@@ -27,16 +27,16 @@ inputBox.onkeyup = (e)=>{
             linkTag.setAttribute("href", webLink);
             linkTag.click();
         }
-        emptyArray = suggestions.filter((data)=>{
+        newArray = suggestions.filter((data)=>{
             //filtering array value and user characters to lowercase and return only those words which are start with user enetered chars
             return data.toLocaleLowerCase().startsWith(userData.toLocaleLowerCase()); 
         });
-        emptyArray = emptyArray.map((data)=>{
+        newArray = newArray.map((data)=>{
             // passing return data inside li tag
             return data = '<li>'+ data +'</li>';
         });
         searcher.classList.add("active"); //show autocomplete box
-        showSuggestions(emptyArray);
+        showSuggestions(newArray);
         let allList = suggestionBox.querySelectorAll("li");
         for (let i = 0; i < allList.length; i++) {
             //adding onclick attribute in all li tag
