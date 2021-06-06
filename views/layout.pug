@@ -20,10 +20,19 @@ html
               a.nav-item.nav-link(href='/games') Games
               a.nav-item.nav-link(href='/genres') Genres
               a.nav-item.nav-link(href='/publishers') Publishers
+            div.search-container
+                div(class="search-input")
+                  a(href="" target="_blank" hidden)
+                  input(type="text" placeholder="Search a Title...")
+                  div(class="autocom-box")
+                  div.search-icon
+                    //- img(src="/search-icon.jpg") --imgbroken. 
             .navbar-right
               if (!locals.authenticated)
                 a.nav-item.nav-link(href='/users/login') Sign in
                 a.nav-item.nav-link(href='/users/signup') Sign up
               if (locals.authenticated)
                 a.nav-item.nav-link(href='/users/logout') Log Out
+        script(src="/javascripts/suggestions.js")
+        script(src="/javascripts/search-feat.js")
     block content
