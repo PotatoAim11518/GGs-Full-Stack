@@ -192,6 +192,11 @@ h1 {
   cursor: default;
   border-radius: 3px;
 }
+
+.autocom-box a {
+  text-decoration: none;
+}
+
 .search-input.active .autocom-box li{
   display: block;
 }
