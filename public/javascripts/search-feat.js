@@ -3,14 +3,16 @@ const inputBox = searcher.querySelector("input");
 const suggestionBox = searcher.querySelector(".autocom-box");
 const icon = searcher.querySelector(".search-icon");
 let linkTag = searcher.querySelector("a");
+
 let webLink;
+
 // if user press any key and release
 inputBox.onkeyup = (e)=>{
-    let userData = e.target.value; //user enetered data
+    let userData = e.target.value; //user entered data
     let newArray = [];
     if(userData){
         icon.onclick = ()=>{
-            webLink = "localhost:8080/games/"+ gameId(userData);
+            webLink = "localhost:8080/games/"+ gameId(gameStuff.id);
             linkTag.setAttribute("href", webLink);
             linkTag.click();
         }
@@ -20,7 +22,7 @@ inputBox.onkeyup = (e)=>{
         });
         newArray = newArray.map((data)=>{
             // passing return data inside li tag
-            return data = '<li>'+ data +'</li>';
+            return data = '<li>'+`<a href="localhost:8080/games/${titleId(data)}">`+ data +'</a>'+'</li>';
         });
         searcher.classList.add("active"); //show autocomplete box
         showSuggestions(newArray);
@@ -28,20 +30,14 @@ inputBox.onkeyup = (e)=>{
         for (let i = 0; i < allList.length; i++) {
             //adding onclick attribute in all li tag
             allList[i].setAttribute("onclick", "select(this)");
+            //add achor tag to the attribute that
+            let 
         }
     }else{
         searcher.classList.remove("active"); //hide autocomplete box
     }
 }
-/*get gameData*/
-const gameId = (async(UserData) => {
-    const game = await Game.findOne({
-        where:{
-            name:UserData
-        }
-    })
-  return game.id      
-})
+  
 function select(element){
     let selectData = element.textContent;
     inputBox.value = selectData;
@@ -61,4 +57,7 @@ function showSuggestions(list){
         listData = list.join('');
     }
     suggestionBox.innerHTML = listData;
+}
+function titleId(title){
+    return suggestions.indexOf(title) + 1;
 }
