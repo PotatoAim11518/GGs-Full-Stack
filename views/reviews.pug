@@ -2,7 +2,9 @@ extends layout
 include utils.pug
 
 append head
+    title=game.name
     link(rel="stylesheet" href="/stylesheets/reviews.css")
+    link(rel="stylesheet" href="/stylesheets/errors.css")
     script(src="/javascripts/index.js" type="module" defer)
 
 block content
@@ -41,7 +43,9 @@ block content
     .reviews__container
       .reviews__form
       h1 Add a review for #{game.name}
-      +errorReport(errors)
+      if errors
+        .review-errors
+          +errorReport(errors)
       form(action=`/games/${game.id}/reviews/add`, method="post")
         input(type='hidden', name='_csrf', value=csrfToken)
         .reviews__rating-label

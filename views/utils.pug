@@ -4,9 +4,6 @@ mixin field(labelText, fieldName, fieldValue, fieldType='text')
     input(type=fieldType id=fieldName name=fieldName value=fieldValue class='form-control')
 
 mixin errorReport(errors)
-  if errors
-    .login-errors
-      p Login Failed! Sorry, cheat codes don't work here.
-      ul
-        each error in errors
-          li.error= error
+  ul
+    each error in errors
+      li.error= error

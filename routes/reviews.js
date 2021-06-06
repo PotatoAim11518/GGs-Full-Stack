@@ -133,9 +133,26 @@ router.post('/games/:id/reviews/add',
     } else {
       errors = validatorErrors.array().map( (error) => error.msg );
     }
+
+    const calcAvgReview = (reviews) => {
+      let total = 0;
+      let count = 0;
+      for (const review of reviews) {
+        let rating = parseFloat(review.rating)
+        total += rating;
+        ++count;
+      }
+      try {
+        return (total / count) ? (total / count).toFixed(1) : "Not enough reviews"
+      } catch {}
+    }
+
+    const avgRating = calcAvgReview(reviews)
+
     res.render('reviews', {
       reviews,
       game,
+      avgRating,
       errors,
       userId,
       csrfToken: req.csrfToken(),

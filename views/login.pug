@@ -1,26 +1,31 @@
 extends layout.pug
 append head
+  title Sign In
   link(rel='stylesheet' href='/stylesheets/login.css')
+  link(rel="stylesheet" href="/stylesheets/errors.css")
 include utils.pug
 
 block content
-  +errorReport(errors)
-  div.form-login-container
-    form(action='/users/login', method='post')#login-form
-      input(type='hidden', name='_csrf', value=csrfToken)
-      div
-        label(for='username') Username
-      div
-        input(type='text', name='username', value=username, defaultValue=null, placeholder='Enter Username')
-      div
-        label(for='password') Password
-      div
-        input(type='password', name='password',value=password, placeholder='Enter Password')
-      div
-        button.signup-button(type='submit') Login
-      div
-        p: a.signup-link(href='/users/signup') New to GGs? Sign up here!
-    form(action='/users/login/demo', method='post')#login-form
-      input(type='hidden', name='_csrf', value=csrfToken)
-      div
-        button(type='submit') Demo User Login
+  .login-container
+    div.form-login-container
+      form(action='/users/login', method='post')#login-form
+        input(type='hidden', name='_csrf', value=csrfToken)
+        div
+          label(for='username') Username
+        div
+          input(type='text', name='username', value=username, defaultValue=null, placeholder='Enter Username')
+        div
+          label(for='password') Password
+        div
+          input(type='password', name='password',value=password, placeholder='Enter Password')
+        div
+          button.signup-button(type='submit') Login
+        div
+          p: a.signup-link(href='/users/signup') New to GGs? Sign up here!
+      form(action='/users/login/demo', method='post')#login-form
+        input(type='hidden', name='_csrf', value=csrfToken)
+        div
+          button(type='submit') Demo User Login
+    if errors
+      .validation-errors
+        +errorReport(errors)
