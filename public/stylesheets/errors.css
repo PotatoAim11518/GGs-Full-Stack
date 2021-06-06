@@ -1,0 +1,28 @@
+.review-errors {
+  font-family: inherit;
+  color: #ef8354;
+  background-color: black;
+  opacity: 90%;
+  padding: 20px;
+  border-radius: 4px;
+  width: 600px;
+  margin: 10px 0 30px 0;
+}
+
+.validation-errors {
+  display: flex;
+  font-family: inherit;
+  color: #ef8354;
+  background-color: rgb(21, 26, 34);
+  opacity: 90%;
+  padding: 20px;
+  border-radius: 4px;
+  width: 350px;
+  margin: 10px 0 30px 0;
+  justify-content: center;
+}
+
+li.error {
+  list-style-type: none;
+  padding: 5px 0;
+}
