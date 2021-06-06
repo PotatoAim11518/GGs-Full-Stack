@@ -4,6 +4,7 @@ h1 {
 
 body {
     background-color: #293241ff;
+    font-family: 'Nunito', Courier, monospace;
 }
 
 .home-banner {
@@ -96,10 +97,18 @@ a.trending-game>img:hover{
     align-items: center;
     flex-direction: column;
     background-color: #98c1d9ff;
-
 }
 
-
+div.all-genres > a{
+    display: flex;
+    position: static;
+    margin-left: 30px;
+    padding: 8px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-table;
+    border: lightgray;
+}
 
 /* Fade in Effect down here */
 
@@ -125,7 +134,15 @@ a.trending-game>img:hover{
 }
 
 .genre-hover {
-    color: #293241ff ;
+    display: flex;
+    position: static;
+    margin-left: 30px;
+    padding: 8px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-table;
+    border: lightgray;
+    color: #293241ff;
 }
 .genre-hover:hover{
     background-color: #293241ff ;
