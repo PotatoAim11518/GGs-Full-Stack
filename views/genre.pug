@@ -1,13 +1,16 @@
 extends layout
 
 append head
-    link(rel="stylesheet" href="/stylesheets/indivGenre.css")
+    link(rel="stylesheet" href="/stylesheets/indivGenPub.css")
     script(src="/javascripts/index.js" type="module" defer)
 
 block content
-    div.allGameBox
-        h2.allGamesHeader #{genre.genreName} Games
-        each game in games
-            div
-                a(href=`/games/${game.id}/reviews`)
-                    img(src=`${game.imageSrc}` class="gameThumbnail")
+    body
+        .gen-pub__container
+            .header
+                h2.indiv__gen-pub #{genre.genreName} Games
+                div.genPub-thumbnail__container
+                    each game in games
+                        div.indiv__gen-pub
+                            a.indiv__gen-pub(href=`/games/${game.id}/reviews`)
+                                img(src=`${game.imageSrc}` class="gameThumbnail")
