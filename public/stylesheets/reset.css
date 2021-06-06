@@ -22,7 +22,7 @@ h1 {
   font-size: 2rem;
 }
 
-.nav-container{
+.nav-container {
   overflow: hidden;
   z-index: 99;
   background-color: #ef8354;

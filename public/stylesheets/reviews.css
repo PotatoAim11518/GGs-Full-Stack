@@ -3,21 +3,17 @@ body {
 }
 
 .page-container {
-  position: sticky;
+  position: relative;
   top: 0px;
   display: flex;
   justify-content: center;
+  height: 100vmax;
 }
 
 #background-image {
   width: 100vw;
   position: fixed;
   filter: blur(10px) grayscale(70%);
-  background: {
-    repeat: no-repeat;
-    size: cover;
-    position: center;
-  }
 }
 
 .game__container {
@@ -35,13 +31,15 @@ body {
 .game__container-card {
   background-color: #293241ff;
   opacity: 100%;
-  color: #E0FBFC
+  color: #E0FBFC;
+  animation: transitionIn 1s;
 }
 
 .game__container-text {
   background-color: #293241ff;
   opacity: 100%;
-  color: #E0FBFC
+  color: #E0FBFC;
+  animation: transitionIn 1.5s;
 }
 
 #thumbnail-image {
@@ -93,6 +91,7 @@ div.game__info-header {
   color: #E0FBFC;
   box-shadow: 5px 5px 10px 5px #111;
   padding: 20px;
+  animation: transitionIn 2s;
 }
 
 .reviews__container > h1 {
@@ -140,13 +139,6 @@ textarea {
   font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
-.reviews__reviewText {
-
-}
-
-.review__delete-btn {
-}
-
 #delete-review {
   float: right;
   background-color: darkgray;
@@ -176,4 +168,13 @@ textarea {
 
 .rating-text {
   text-align: left;
+}
+
+@keyframes transitionIn {
+  from {
+      opacity: 0;
+  }
+  to {
+      opacity: 1;
+  }
 }
