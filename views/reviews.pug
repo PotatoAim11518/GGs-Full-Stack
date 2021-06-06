@@ -1,11 +1,10 @@
 extends layout
-include utils.pug
-
 append head
     title=game.name
-    link(rel="stylesheet" href="/stylesheets/reviews.css")
-    link(rel="stylesheet" href="/stylesheets/errors.css")
-    script(src="/javascripts/index.js" type="module" defer)
+    link(rel='stylesheet' href='/stylesheets/reviews.css')
+    link(rel='stylesheet' href='/stylesheets/errors.css')
+    //- script(src="/javascripts/index.js" type="module" defer)
+include utils.pug
 
 block content
   .page-container
@@ -39,7 +38,6 @@ block content
             p.avg-rating #{avgRating}
               span#rating-icon-span
                 img(src='/favicon.ico')#rating-icon
-
     .reviews__container
       .reviews__form
       h1 Add a review for #{game.name}
