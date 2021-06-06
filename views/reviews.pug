@@ -2,6 +2,7 @@ extends layout
 include utils.pug
 
 append head
+    title=game.name
     link(rel="stylesheet" href="/stylesheets/reviews.css")
     link(rel="stylesheet" href="/stylesheets/errors.css")
     script(src="/javascripts/index.js" type="module" defer)

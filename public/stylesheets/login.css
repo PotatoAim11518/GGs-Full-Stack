@@ -30,7 +30,9 @@ label.login-label{
     color:#3d5a80ff;
 }
 body{
-    background-image: url("/dualling.jpg") ;
+    background-image: url("/dualling.jpg");
+    background-repeat: no-repeat;
+    height: 100%;
     -webkit-backgroud-size:cover;
     -moz-background-size:cover;
     -o-background-size: cover;
