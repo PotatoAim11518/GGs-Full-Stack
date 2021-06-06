@@ -1,46 +1,53 @@
-/* .page-container {
-    position: sticky;
-    top: 0px;
-    display: flex;
-    justify-content: center;
-} */
-
-/* #background-image {
-    width: 100vw;
-    position: fixed;
-    filter: blur(8px) grayscale(50%);
-    background: {
-    repeat: no-repeat;
-    size: cover;
-    position: center;
-    }
-} */
-
-.form-container{
-    box-sizing: border-box;
-    margin:auto;
-    margin-top:200px;
-    width: 25vw;
-    background-color:#e0fbfcff;
-    border-radius: 5px;
-    padding:20px;
-    display:flex;
-    align-items:center;
-    justify-content: space-around;
-    flex-direction:column;
-    position: absolute;
-    left: 38vw;
-    margin-bottom: 40px;
+body{
+    background-color: #293241ff;
 }
 
-.game__container {
+.page-container {
+    position: relative;
+}
+
+.signup-container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+#signup-background__image{
+    width: 100vw;
+    position: fixed;
+    filter: blur(10px) grayscale(60%);
+    background: {
+        repeat: no-repeat;
+        size: cover;
+        position: center;
+    }
+}
+
+
+.form-container{
+    z-index: 1;
+    box-sizing: border-box;
+    margin:auto;
+    margin-top:120px;
+    margin-bottom: 40px;
+    padding:20px;
+    width: 350px;
+    background-color:#e0fbfcff;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction:column;
+}
+
+/* .game__container {
     display: flex;
     top: 80px;
     background-color: #293241ff;
     opacity: 90%;
     color: #E0FBFC;
     box-shadow: 5px 5px 10px 5px #111;
-  }
+  } */
 
 label.login-label{
     width: 75%;
@@ -53,17 +60,4 @@ label.login-label{
 }
 .signup-link:hover{
     color:#3d5a80ff;
-}
-
-#signup-background__image{
-    width: 100vw;
-    position: fixed;
-    filter: blur(10px) grayscale(60%);
-    repeat: no-repeat;
-    size: cover;
-    position: center; 
-}
-
-body{
-    background-color: #293241ff;
 }

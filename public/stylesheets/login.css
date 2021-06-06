@@ -1,3 +1,9 @@
+.login-container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
 .form-login-container{
     box-sizing: border-box;
     margin:auto;

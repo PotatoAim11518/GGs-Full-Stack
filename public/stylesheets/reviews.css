@@ -95,7 +95,9 @@ div.game__info-header {
   padding: 20px;
 }
 
-
+.reviews__container > h1 {
+  margin-bottom: 20px;
+}
 
 .reviews__rating-label {
   font-size: larger;

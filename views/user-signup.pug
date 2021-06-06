@@ -1,26 +1,30 @@
 extends layout.pug
-  
+
 include utils.pug
 
 append head
+    link(rel="stylesheet" href="/stylesheets/errors.css")
     link(rel="stylesheet" href="/stylesheets/signup.css")
     script(src="/javascripts/index.js" type="module" defer)
 
 block content
-  +errorReport(errors)
-  .page-Container 
-    img(src="https://images.unsplash.com/photo-1617096200347-cb04ae810b1d?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80" id="signup-background__image")
-  div.form-container
-    form(action='/users/signup' method='post')
-      input(type='hidden' name='_csrf' value=csrfToken)
-      +field('User Name', 'username', user.username)
-      +field('First Name', 'firstName', user.firstName)
-      +field('Last Name', 'lastName', user.lastName)
-      +field('Email Address', 'email', user.email)
-      +field('Password', 'password', user.password, 'password')
-      +field('Confirm Password', 'confirmPassword', user.confirmPassword, 'password')
-      div
-        button(type='submit' class='signup-button') Sign-Up!
-        div.signup-form-link
-          a(href='/users/login') Already a User? Login
-          a(href='/') Cancel
+  .page-container
+    img(src="https://images.unsplash.com/photo-1617096200347-cb04ae810b1d?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80")#signup-background__image
+    .signup-container
+      .form-container
+        form(action='/users/signup' method='post')
+          input(type='hidden' name='_csrf' value=csrfToken)
+          +field('User Name', 'username', user.username)
+          +field('First Name', 'firstName', user.firstName)
+          +field('Last Name', 'lastName', user.lastName)
+          +field('Email Address', 'email', user.email)
+          +field('Password', 'password', user.password, 'password')
+          +field('Confirm Password', 'confirmPassword', user.confirmPassword, 'password')
+          div
+            button(type='submit' class='signup-button') Sign-Up!
+            div.signup-form-link
+              a(href='/users/login') Already a User? Login
+              a(href='/') Cancel
+      if errors
+        .validation-errors
+          +errorReport(errors)
