@@ -20,13 +20,13 @@ html
               a.nav-item.nav-link(href='/games') Games
               a.nav-item.nav-link(href='/genres') Genres
               a.nav-item.nav-link(href='/publishers') Publishers
-            div.search-container
-                div(class="search-input")
+            .search-container
+                .search-input
                   a(href="" target="_blank" hidden)
                   input(type="text" placeholder="Search a Title...")
-                  div(class="autocom-box")
-                  div.search-icon
-                    //- img(src="/search-icon.jpg") --imgbroken. 
+                  .autocom-box
+                  .search-icon
+                    //- img(src="/search-icon.jpg") --imgbroken.
             .navbar-right
               if (!locals.authenticated)
                 a.nav-item.nav-link(href='/users/login') Sign in
