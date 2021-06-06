@@ -13,7 +13,7 @@ const router = express.Router();
 // GET /publishers
 router.get('/publishers', asyncHandler(async (req, res) => {
     const publishers = await Publisher.findAll();
-
+    res.locals.path = '/publishers'
     res.render('publishers', {
         publishers
     })

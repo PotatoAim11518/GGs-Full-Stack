@@ -8,7 +8,7 @@ const router = express.Router();
 
 router.get('/games', asyncHandler(async (req, res) => {
     const games = await Game.findAll();
-
+    res.locals.path = '/games'
     res.render('games', {
         games
     })

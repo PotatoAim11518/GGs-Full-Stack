@@ -65,6 +65,10 @@ h1 {
   color: #ef8354;
   transition: 0.4s ease;
 }
+.nav-link-active{
+  background-color: #293241ff ;
+  color: #ef8354;
+}
 .form-container{
   box-sizing: border-box;
   border-radius: 5px;
