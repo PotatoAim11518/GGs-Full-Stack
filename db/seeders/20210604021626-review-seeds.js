@@ -30,7 +30,7 @@ module.exports = {
         },
         {
           userId: 2,
-          gameId: 22,
+          gameId: 24,
           content: "Is this legend in League of Legends?",
           rating: 3.7,
           createdAt: new Date(),

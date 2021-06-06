@@ -21,16 +21,25 @@ body, header, nav {
 h1 {
   font-size: 2rem;
 }
+
 .nav-container{
-  margin:0;
-  padding:0;
-  overflow:hidden;
-  background-color: #ef8354 ;
+  overflow: hidden;
+  background-color: #ef8354;
+  position: sticky;
+  top: 0px;
 }
+
+.nav-container__contents {
+  display: flex;
+  align-items: flex-end;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
 .logo-img{
-  height: 100px;
-  width: 100px;
-  margin-right: 200px;
+  height: 101px;
+  width: 101px;
+  margin-right: 100px;
   float:left;
   padding:10px;
 }
@@ -41,7 +50,7 @@ h1 {
 }
 .nav-item{
   display:inline-flex;
-  padding: 14px 16px;
+  padding: 15px 16px;
   background-color: #ef8354;
 }
 .nav-link{
@@ -101,9 +110,33 @@ h1 {
   color:blue;
 }
 .navbar-sameLine {
+  position: relative;
   display: flex;
-  justify-content: space-between;
-  padding-top: 3em;
+  flex-direction: row;
+  align-items: flex-end;
+}
+
+.login-status {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding-right: 20px;
+}
+
+.logged-in-message {
+  color: #293241ff;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: 600;
+  text-align:right;
+  padding-right: 20px;
+}
+
+#logged-in-icon {
+  align-items: center;
+  width: 30px;
+  height: 30px;
+  box-shadow: 3px -2px 5px #4f5d75;
+  border-radius: 10px;
 }
 /* search */
 .search-container{
