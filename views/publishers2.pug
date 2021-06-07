@@ -1,0 +1,14 @@
+extends layout
+
+append head
+    title All Publishers
+    link(rel="stylesheet" href="/stylesheets/categories.css")
+    script(src="/javascripts/index.js" type="module" defer)
+block content
+    .category-container
+        h1 All Publishers
+        .category-container__thumbnails
+            each publisher in publishers
+                .category__card
+                    a(href=`/publishers/${publisher.id}`)
+                        h2 #{publisher.publisherName}

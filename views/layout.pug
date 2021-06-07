@@ -15,9 +15,18 @@ html
           p.logged-in-message Not a member? Sign up below!
       .nav-container__contents
         .navbar-left
-          a.nav-item.nav-link(href='/games') Games
-          a.nav-item.nav-link(href='/genres') Genres
-          a.nav-item.nav-link(href='/publishers') Publishers
+          if (locals.path === '/games')
+            a.nav-item.nav-link.nav-link-active(href='/games') Games
+          else
+            a.nav-item.nav-link#games(href='/games') Games
+          if (locals.path === '/genres')
+            a.nav-item.nav-link.nav-link-active(href='/genres') Genres
+          else
+            a.nav-item.nav-link(href='/genres') Genres
+          if (locals.path === '/publishers')
+            a.nav-item.nav-link.nav-link-active(href='/publishers') Publishers
+          else
+            a.nav-item.nav-link(href='/publishers') Publishers
         .search-container
             .search-input
               a(href="" target="_blank" hidden)
@@ -27,9 +36,15 @@ html
                 //- img(src="/search-icon.jpg") --imgbroken.
         .navbar-right
           if (!locals.authenticated)
-            a.nav-item.nav-link(href='/users/login') Sign in
-            a.nav-item.nav-link(href='/users/signup') Sign up
-          if (locals.authenticated)
+            if (locals.path === '/login')
+              a.nav-item.nav-link.nav-link-active(href='/users/login') Sign in
+            else
+              a.nav-item.nav-link(href='/users/login') Sign in
+            if (locals.path ==='/signup')
+              a.nav-item.nav-link.nav-link-active(href='/users/signup') Sign up
+            else
+              a.nav-item.nav-link(href='/users/signup') Sign up
+          else
             a.nav-item.nav-link(href='/users/logout') Log Out
     script(src="/javascripts/suggestions.js")
     script(src="/javascripts/search-feat.js")

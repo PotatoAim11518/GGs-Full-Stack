@@ -5,16 +5,19 @@
 }
 
 .form-login-container{
+    align-items:center;
+    border-radius: 5px;
+    box-shadow: 5px 5px 10px 5px #111;
     box-sizing: border-box;
+    background-color: #293241ff;
+    color: #E0FBFC;
+    display:flex;
+    flex-direction:column;
     margin:auto;
     margin-top:200px;
+    opacity: 90%;
+    padding: 20px;
     width:350px;
-    background-color:#e0fbfcff;
-    border-radius: 5px;
-    padding:20px;
-    display:flex;
-    align-items:center;
-    flex-direction:column;
 }
 
 label.login-label{
@@ -38,4 +41,30 @@ body{
     -o-background-size: cover;
     background-size:cover;
     background-color: white;
+}
+
+input {
+    width: 100%;
+}
+
+.demo-user-btn {
+    background-color: #00eeff;
+    border: none;
+    border-radius: 8px;
+    box-shadow: -1px 1px 5px 5px rgb(20, 20, 20);
+    color: #293241ff;
+    padding: 14px 40px;
+    text-align: center;
+    text-decoration: none;
+    display: flex;
+    font-size: 16px;
+    transition-duration: 0.4s;
+    float: right;
+    margin-top: 20px;
+}
+
+.demo-user-btn:hover {
+    color: white;
+    background-color: rgb(204, 0, 255);
+    transition: background-color 0.3s, color 0.3s;
 }

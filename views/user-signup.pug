@@ -23,9 +23,14 @@ block content
           +field('Confirm Password', 'confirmPassword', user.confirmPassword, 'password')
           div
             button(type='submit' class='signup-button') Sign-Up!
-            div.signup-form-link
-              a(href='/users/login') Already a User? Login
-              a(href='/') Cancel
+      .signup-redirect
+        p Already a User?
+        .home-redirect
+          a.redirect-btn(href='/')
+            p Cancel
+        .login-redirect
+          a.redirect-btn(href='/users/login')
+            p Login
       if errors
         .validation-errors
           +errorReport(errors)

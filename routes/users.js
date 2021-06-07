@@ -12,9 +12,9 @@ const router = express.Router();
 
 // GET /users/login
 router.get('/login', csrfProtection, asyncHandler(async (req, res) => {
+  res.locals.path = '/login'
   res.render('login', { title: 'Login', csrfToken: req.csrfToken() });
 }));
-
 // Login validators
 const loginValidators = [
   check('username')
@@ -67,6 +67,7 @@ router.post(
 
 // GET /users/signup
 router.get('/signup', csrfProtection, asyncHandler(async (req, res, next)=> {
+  res.locals.path = '/signup'
   const user = await User.build({
     email: null,
     username: null,
