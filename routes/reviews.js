@@ -74,8 +74,8 @@ const reviewValidators = [
     .withMessage('Please write a review before submitting!')
 ]
 
-// POST /games/:id/reviews/add
-router.post('/games/:id/reviews/add',
+// POST /games/:id/reviews
+router.post('/games/:id/reviews',
   authUser,
   csrfProtection,
   reviewValidators,
@@ -125,7 +125,7 @@ router.post('/games/:id/reviews/add',
 
       if (!currentUserReview.length) {
         await newReview.save()
-        res.redirect(`/games/${game.id}/reviews`)
+        return res.redirect(`/games/${game.id}/reviews`)
       } else {
         errors.push('Sorry, you\'ve already written a review for this game.');
       }
