@@ -25,18 +25,20 @@ body{
 
 .form-container{
     z-index: 1;
+    box-shadow: 5px 5px 10px 5px #111;
     box-sizing: border-box;
-    margin:auto;
-    margin-top:120px;
-    margin-bottom: 40px;
+    background-color: #293241ff;
+    border-radius: 5px;
+    color: #E0FBFC;
+    display: flex;
+    flex-direction: column;
+    margin: 40px;
+    opacity: 90%;
     padding:20px;
     width: 350px;
-    background-color:#e0fbfcff;
-    border-radius: 5px;
-    display: flex;
     align-items: center;
     justify-content: space-around;
-    flex-direction:column;
+    width: 350px;
 }
 
 /* .game__container {
@@ -59,4 +61,57 @@ label.login-label{
 }
 .signup-link:hover{
     color:#3d5a80ff;
+}
+
+.signup-redirect {
+    z-index: 1;
+    box-shadow: 5px 5px 10px 5px #111;
+    box-sizing: border-box;
+    background-color: #293241ff;
+    border-radius: 5px;
+    color: #E0FBFC;
+    display: flex;
+    flex-direction: row;
+    margin: 10px;
+    opacity: 90%;
+    padding:20px;
+    width: 350px;
+    align-items: center;
+    justify-content: space-around;
+    width: 350px;
+}
+
+.login-redirect {
+    z-index: 1;
+    background-color: #ee6c4dff;
+    width: 120px;
+    height: 50px;
+    margin: 5px;
+    box-shadow: 5px 5px 5px 5px #111;
+    border-radius: 5px;
+}
+.login-redirect:hover {
+    color: white;
+    background-color: rgb(9, 138, 9);
+    transition: background-color 0.3s, color 0.3s;
+}
+.home-redirect {
+    z-index: 1;
+    color: black;
+    background-color: gray;
+    width: 120px;
+    height: 50px;
+    margin: 5px;
+    box-shadow: 5px 5px 5px 5px #111;
+    border-radius: 5px;
+}
+.home-redirect:hover {
+    color: white;
+    background-color: rgb(170, 0, 0);
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.redirect-btn {
+    text-decoration: none;
+    text-align: center;
 }

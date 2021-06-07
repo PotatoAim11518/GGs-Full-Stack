@@ -1,0 +1,14 @@
+extends layout
+
+append head
+    title All Genres
+    link(rel="stylesheet" href="/stylesheets/categories.css")
+    script(src="/javascripts/index.js" type="module" defer)
+block content
+    .category-container
+        h1 All Genres
+        .category-container__thumbnails
+            each genre in genres
+                .category__card
+                    a(href=`/genres/${genre.id}`)
+                        h2 #{genre.genreName}

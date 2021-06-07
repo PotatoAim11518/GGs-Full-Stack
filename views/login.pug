@@ -10,11 +10,11 @@ block content
     div.form-login-container
       form(action='/users/login', method='post')#login-form
         input(type='hidden', name='_csrf', value=csrfToken)
-        div
+        .form-label
           label(for='username') Username
         div
           input(type='text', name='username', value=username, defaultValue=null, placeholder='Enter Username')
-        div
+        .form-label
           label(for='password') Password
         div
           input(type='password', name='password',value=password, placeholder='Enter Password')
@@ -25,7 +25,7 @@ block content
       form(action='/users/login/demo', method='post')#login-form
         input(type='hidden', name='_csrf', value=csrfToken)
         div
-          button(type='submit') Demo User Login
+          button(type='submit').demo-user-btn Demo User Login
     if errors
       .validation-errors
         +errorReport(errors)

@@ -15,7 +15,7 @@ const router = express.Router();
 router.get('/genres', asyncHandler(async (req, res) => {
     const genres = await Genre.findAll();
     res.locals.path = '/genres'
-    res.render('genres', {
+    res.render('genres2', {
         genres
     })
 }));

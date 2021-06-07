@@ -6,10 +6,9 @@ append head
 block content
     body
         .gen-pub__container
-            .header
-                h2.indiv__gen-pub #{publisher.publisherName} Games
-                div.genPub-thumbnail__container
-                    each game in games
-                        div.indiv__gen-pub
-                            a.indiv__gen-pub(href=`/games/${game.id}/reviews`)
-                                img(src=`${game.imageSrc}` class="gameThumbnail")
+            h1.indiv__gen-pub #{publisher.publisherName} Games
+            div.genPub-thumbnail__container
+                each game in games
+                    div.indiv__gen-pub
+                        a.indiv__gen-pub(href=`/games/${game.id}/reviews`)
+                            img(src=`${game.imageSrc}` class="gameThumbnail")
