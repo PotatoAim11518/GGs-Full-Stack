@@ -3,41 +3,72 @@ body {
 }
 
 h1.indiv__gen-pub{
-    padding: 20px;
-    color: #ef8354;
+    color: #ee6c4dff;
+    font-weight: 600;
+    display: flex;
+    justify-content: space-around;
+    font-size: 5vh;
+    margin: 2vh 0;
 }
 
 .gen-pub__container {
+    background-color: #293241ff;
+    position: relative;
     display: flex;
     flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+}
+
+.genPub-thumbnail__container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    height: auto;
+    width: 70vw;
 }
 
 div.indiv__gen-pub {
-display: flex;
-position: static;
-margin-left: 30px;
-padding: 8px 20px;
-text-align: center;
-justify-content: space-evenly;
-align-content: center;
-text-decoration: none;
-display: inline-table;
-border: lightgray;
+    position: relative;
+    background-color: #293241ff;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: space-evenly;
+    align-content: space-around;
+    gap: 1vh;
 }
 
 a.indiv__gen-pub>img {
-    border-radius: 8px;
-    max-width: 200px;
-    height: auto;
+    position: relative;
+    max-width: 15rem;
+    min-width: 15rem;
+    background-color: rgb(21, 26, 34);
+    max-height: 15rem;
+    min-height: 15rem;
+    object-fit: contain;
     margin: 10px;
+    /* border-radius: 8px; */
+    animation: transitionIn 1s;
     box-shadow: 0px 0px 0px 0px rgb(20, 20, 20);
-    transition: color 0.3s, background-color 0.3s , box-shadow .3s;
+    transition: color 0.3s, background-color 0.3s , box-shadow 0.3s, transform 0.3s;
 }
 
 a.indiv__gen-pub>img.gameThumbnail:hover {
+    background-color: #ee6c4dff;
     box-shadow: -1px 1px 5px 5px rgb(20, 20, 20);
-    transition: color 0.3s, background-color 0.3s , box-shadow .3s;
+    transform: scale(1.07);
+    transition: color 0.3s, background-color 0.3s , box-shadow 0.3s, transform 0.3s;
+}
+
+@keyframes transitionIn {
+    from {
+        opacity: 0.0;
+    }
+    to {
+        opacity: 1.0;
+    }
 }

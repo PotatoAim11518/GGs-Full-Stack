@@ -3,44 +3,55 @@ body {
 }
 
 h1.allGamesHeader {
-    color: lightgray;
+    color: #ee6c4dff;
     display: flex;
     justify-content: space-around;
+    font-size: 5vh;
+    margin: 2vh 0;
 }
 
 div.allGameBox {
-    margin: auto;
     background-color: #293241ff;
-    border: 1px solid #293241ff;
-    border-radius: 3px;
-    font-weight: 700;
-    padding: 4px 8px;
     position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
 }
 
 div.games {
-    display: flex;
+    position: relative;
     background-color: #293241ff;
+    display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     align-items: flex-start;
-    justify-content: space-around;
-    align-content: space-between;
+    justify-content: space-evenly;
+    align-content: space-around;
+    width: 70vw;
+    gap: 1vh;
 }
 
 a.games>img {
-    border-radius: 8px;
-    max-width: 200px;
-    height: auto;
+    position: relative;
+    max-width: 15rem;
+    min-width: 15rem;
+    background-color: rgb(21, 26, 34);
+    max-height: 15rem;
+    min-height: 15rem;
+    object-fit: contain;
     margin: 10px;
-    animation: transitionIn 2s;
+    /* border-radius: 8px; */
+    animation: transitionIn 1s;
     box-shadow: 0px 0px 0px 0px rgb(20, 20, 20);
-    transition: color 0.3s, background-color 0.3s , box-shadow .3s;
+    transition: color 0.3s, background-color 0.3s , box-shadow 0.3s, transform 0.3s;
 }
 
 a.games>img.gameThumbnail:hover {
+    background-color: #ee6c4dff;
     box-shadow: -1px 1px 5px 5px rgb(20, 20, 20);
-    transition: color 0.3s, background-color 0.3s , box-shadow .3s;
+    transform: scale(1.07);
+    transition: color 0.3s, background-color 0.3s , box-shadow 0.3s, transform 0.3s;
 }
 
 .allGamesHeader {
@@ -56,9 +67,9 @@ body {
 
 @keyframes transitionIn {
     from {
-        opacity: 0;
+        opacity: 0.0;
     }
     to {
-        opacity: 1;
+        opacity: 1.0;
     }
 }

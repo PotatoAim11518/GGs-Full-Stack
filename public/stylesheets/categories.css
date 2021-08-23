@@ -12,7 +12,10 @@ body {
 
 .category-container h1 {
   padding: 20px;
-  color: #ef8354;
+  color: #ee6c4dff;
+  font-weight:600;
+  font-size: 5vh;
+  margin: 2vh 0;
 }
 
 .category-container__thumbnails {
@@ -35,6 +38,7 @@ body {
   margin: 30px;
   box-shadow: 0px 0px 0px 0px rgb(20, 20, 20);
   transition: color 0.3s, background-color 0.3s , box-shadow .3s;
+  animation: transitionIn 1s;
 }
 
 .category__card:hover {
@@ -57,4 +61,14 @@ body {
   text-decoration: none;
   text-align: center;
   font: small-caption;
+}
+
+
+@keyframes transitionIn {
+  from {
+      opacity: 0.0;
+  }
+  to {
+      opacity: 1.0;
+  }
 }
