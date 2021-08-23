@@ -69,8 +69,8 @@ body {
 }
 
 #thumbnail-image {
-  min-width: 30vw;
   max-width: 30vw;
+  min-width: 30vw;
   /* min-height: 30vw; */
   max-height: 30vw;
   object-fit: contain;

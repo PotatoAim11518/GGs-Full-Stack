@@ -44,10 +44,10 @@ a.all__gens-pubs {
 }
 
 a.all__gens-pubs:hover {
-      background-color: #ef8354;
-      color: #293241ff;
-      transition: 0.4s ease;
-      text-decoration: none;
+    background-color: #ef8354;
+    color: #293241ff;
+    transition: 0.4s ease;
+    text-decoration: none;
 }
 
 .all__gens-pubsHeader {
