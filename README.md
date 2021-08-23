@@ -25,6 +25,14 @@ Start putting gifs and images here.
 5. [Frontend Routes](https://github.com/PotatoAim11518/GGs-Full-Stack/wiki/Frontend-Routes)
 
 
+### Technologies
+* JavaScript
+* Express.js
+* Pug
+* Sequelize
+* PostgreSQL
+* CSS
+
 ### Deployment:
 * Heroku
 
@@ -32,11 +40,5 @@ Start putting gifs and images here.
 * Postman
 * Postbird
 
-### Technologies
-* JavaScript
-* Pug
-* Sequelize
-* PostgreSQL
-* CSS
 
 
