@@ -6,60 +6,89 @@ body {
   position: relative;
   top: 0px;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
   height: 100vmax;
+}
+
+.game-title h1 {
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  color: #ee6c4dff;
+  font-weight: 600;
+  font-size: 5vh;
+  margin: 20px;
+  text-align: center;
+}
+
+.game-info {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
 }
 
 #background-image {
   width: 100vw;
   position: fixed;
-  filter: blur(10px) grayscale(70%);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -45%);
+  background-position: center;
+  -webkit-filter: grayscale(0.7) blur(10px);
 }
 
 .game__container {
   display: flex;
-  position: absolute;
+  flex-direction: column;
+  position: relative;
   top: 80px;
   width: 90vw;
+  height: 75vh;
   background-color: #293241ff;
   opacity: 90%;
   color: #E0FBFC;
   box-shadow: 5px 5px 10px 5px #111;
-  margin-bottom: 40px;
+  margin-bottom: 2vh;
 }
 
 .game__container-card {
   background-color: #293241ff;
   opacity: 100%;
   color: #E0FBFC;
-  animation: transitionIn 1s;
+  animation: transitionIn 0.5s;
+}
+
+.game__thumbnail-image {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+#thumbnail-image {
+  min-width: 30vw;
+  max-width: 30vw;
+  /* min-height: 30vw; */
+  max-height: 30vw;
+  object-fit: contain;
+  margin: 20px;
+  box-shadow: 5px 5px 10px 5px #111;
+  opacity: 100%;
 }
 
 .game__container-text {
   background-color: #293241ff;
   opacity: 100%;
   color: #E0FBFC;
-  animation: transitionIn 1.5s;
-}
-
-#thumbnail-image {
-  max-width: 30vw;
-  max-height: 30vw;
-  margin: 20px;
-  box-shadow: 5px 5px 10px 5px #111;
-  opacity: 100%;
+  animation: transitionIn 0.5s;
 }
 
 .game__info {
   margin: 20px;
   padding-bottom: 20px;
-}
-
-.game-title {
-  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-  font-weight: 700;
-  margin: 20px;
-  text-align: center;
 }
 
 div.game__info-header {
@@ -91,7 +120,7 @@ div.game__info-header {
   color: #E0FBFC;
   box-shadow: 5px 5px 10px 5px #111;
   padding: 20px;
-  animation: transitionIn 2s;
+  animation: transitionIn 0.5s;
 }
 
 .reviews__container > h1 {
@@ -133,6 +162,10 @@ textarea {
   width: 600px;
 }
 
+.reviews__rating {
+
+}
+
 .reviews__username {
   color: #ef8354;
   font-weight: bold;
@@ -172,9 +205,9 @@ textarea {
 
 @keyframes transitionIn {
   from {
-      opacity: 0;
+      opacity: 0.0;
   }
   to {
-      opacity: 1;
+      opacity: 1.0;
   }
 }
