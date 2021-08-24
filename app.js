@@ -14,6 +14,7 @@ const gamesRouter = require('./routes/games');
 const reviewsRouter = require('./routes/reviews');
 const genresRouter = require('./routes/genres');
 const publishersRouter = require('./routes/publishers');
+const { NotFound } = require('http-errors');
 
 
 const app = express();
@@ -58,6 +59,14 @@ app.use(function (req, res, next) {
   next(createError(404));
 });
 
+app.use((err, req, res, next) => {
+  if (err instanceof NotFound || err instanceof TypeError) {
+    res.render('404')
+  } else {
+    next(err)
+  }
+});
+
 // error handler
 app.use(function (err, req, res, next) {
   // set locals, only providing error in development
@@ -68,5 +77,6 @@ app.use(function (err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
+
 
 module.exports = app;

@@ -1,0 +1,55 @@
+.pageContainer {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding-top: 5vh;
+  background-color: #293241ff;
+  height: 100vh;
+  width: 100vw;
+}
+
+h1 {
+  color: #ee6c4dff;
+  font-size: 5vh;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+h2 {
+  color: white;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.buttons {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  width: 300px;
+}
+
+.button {
+  font-weight: 600;
+  cursor: pointer;
+  color: #293241ff;
+  background-color: #ee6c4dff;
+  height: 30px;
+  width: 120px;
+  text-align: center;
+  line-height: 26px;
+  border-radius: 15px;
+  border: 2px solid transparent;
+  transition: color 0.3s, border 0.3s;
+}
+
+.button:hover {
+  color: white;
+  border: 2px solid white;
+  transition: color 0.3s, border 0.3s;
+}
+
+img {
+  transform: scale(0.8);
+}
