@@ -13,7 +13,7 @@ body {
     height: 85vh;
     background-size: cover;
     background-repeat: no-repeat;
-    background-image: url("https://i.pinimg.com/originals/59/bf/96/59bf96fde108d05bbaa2f096de0934d5.gif");
+    background-image: url("https://i.pinimg.com/originals/9a/58/c3/9a58c343701abc80f7e1d5ec4142ab4d.gif");
 }
 
 .homeBannerContent {
@@ -25,7 +25,8 @@ body {
 }
 
 .homeBannerContent h1 {
-    font-size:9em;
+    font-size:8em;
+    color: aliceblue;
     font-family: 'Press Start 2P', cursive;
     text-shadow: 4px 4px rgb(10, 0, 36);
 }
