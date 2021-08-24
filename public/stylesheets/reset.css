@@ -23,6 +23,7 @@ h1 {
 }
 
 .nav-container {
+  height:auto;
   overflow: hidden;
   z-index: 99;
   background-color: #ef8354;
@@ -156,7 +157,7 @@ h1 {
 .search-container .search-input{
   background: #ffffff;
   width:25vw;
-  border-radius: 5px;
+  border-radius: 1px;
   position: relative;
   box-shadow: 0px 1px 5px 3px rgba(0,0,0,0.2);
 }
@@ -175,7 +176,8 @@ h1 {
   border-radius: 5px 5px 0 0;
 }
 .search-input .autocom-box{
-  position: fixed;
+  position: sticky;
+  top: 100px;
   width: inherit;
   padding: 0;
   opacity: 0;
@@ -187,14 +189,17 @@ h1 {
   border-bottom-right-radius: 5px;
 }
 .search-input.active .autocom-box{
+  position:fixed;
   padding: 10px 8px;
+  overflow-y: auto;
   opacity: 1;
   pointer-events: auto;
 }
 .autocom-box li{
-  list-style: none;
+  
+  list-style:none;
   padding: 8px 12px;
-  display: none;
+  display: block;
   width: 100%;
   cursor: default;
   border-radius: 3px;
@@ -205,18 +210,11 @@ h1 {
 }
 
 .search-input.active .autocom-box li{
+  position:relative;
   display: block;
 }
+
 .autocom-box li:hover{
   background: #efefef;
 }
-.search-input .search-icon{
-  position: absolute;
-  right: 0px;
-  top: 0px;
-  height: 20px;
-  width: 20px;
-  text-align: center;
-  color: #644bff;
-  cursor: pointer;
-}
+
