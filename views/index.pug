@@ -1,28 +1,32 @@
 extends layout.pug
 
 append head
-  title Good Games
+  title GoodGames
   link(rel="stylesheet" href="/stylesheets/index.css")
   script(src="/javascripts/index.js" type="module" defer)
 
 block content
   div.home-banner
-    img#subLogo1(src="/logo.png")
-    h1.landingWelcome= title
+    h1.landingWelcome GoodGames
     img#subLogo2(src="/logo.png")
   h2.trend Trending Games
   div.trendingBox
-    .trendingBox__card
-      a.trending-game(href=`/games/${game1.id}/reviews` id="trendingGame1")
-        img(src=`${game1.imageSrc}`)
-    .trendingBox__card
-      a.trending-game(href=`/games/${game2.id}/reviews` id="trendingGame2")
-        img(src=`${game2.imageSrc}`)
-    .trendingBox__card
-      a.trending-game(href=`/games/${game3.id}/reviews` id="trendingGame2")
-        img(src=`${game3.imageSrc}`)
+    .gameThumbnail
+      a.trending-game(href=`/games/${game1.id}/reviews`)
+        img(src=`${game1.imageSrc}` class="gameThumbnail")
+    .gameThumbnail
+      a.trending-game(href=`/games/${game2.id}/reviews` class="gameThumbnail")
+        img(src=`${game2.imageSrc}` class="gameThumbnail")
+    .gameThumbnail
+      a.trending-game(href=`/games/${game3.id}/reviews` class="gameThumbnail")
+        img(src=`${game3.imageSrc}` class="gameThumbnail")
   div.genreBox
     h2.genreHomeTitle Genres
     each genre in genres
       div
         a(href=`/genres/${genre.id}` class="genre-hover") #{genre.genreName}
+  div.aboutLinksContainer
+    h2.aboutLinksTitle GoodGames was a collaboration by:
+    div.aboutLinksAnthony
+    div.aboutLinksTony
+    div.aboutLinksWilson 
