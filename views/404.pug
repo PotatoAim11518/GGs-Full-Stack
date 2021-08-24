@@ -1,0 +1,16 @@
+extends layout
+
+append head
+    title 404 Not Found
+    link(rel="stylesheet" href="/stylesheets/404.css")
+    script(src="/javascripts/404.js" type="module" defer)
+
+block content
+  body
+    .pageContainer
+      h1 Oops! Error 404
+      h2 You've come across a dead link
+      img(src="/assets/dead_link.png", alt="dead_link")
+      .buttons
+        a.button#goHome Quit
+        a.button#goBack Continue
