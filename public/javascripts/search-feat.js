@@ -40,7 +40,8 @@ function showSuggestions(list){
     if(!list.length){
         if(inputBox.value !== ''){
             userValue = inputBox.value;
-            listData = '<li>'+ userValue +'</li>';
+            listData = '<li>'+ `<a href="/games/${titleId(userValue)}/reviews">`+ userValue +'</a>'+'</li>';
+            
         }else{
             listData=null
         }
