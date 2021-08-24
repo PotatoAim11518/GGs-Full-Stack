@@ -3,12 +3,15 @@ extends layout.pug
 append head
   title GoodGames
   link(rel="stylesheet" href="/stylesheets/index.css")
+  link(rel="preconnect" href="https://fonts.googleapis.com")
+  link(rel="preconnect" href="https://fonts.gstatic.com" crossorigin)
+  link(href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet")
   script(src="/javascripts/index.js" type="module" defer)
 
 block content
   div.home-banner
-    h1.landingWelcome GoodGames
-    img#subLogo2(src="/logo.png")
+    div.homeBannerContent
+      h1.landingWelcome GoodGames
   h2.trend Trending Games
   div.trendingBox
     .gameThumbnail

@@ -10,6 +10,24 @@ body {
     display: flex;
     background-color: #293241ff;
     justify-content: space-around;
+    height: 85vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-image: url("https://i.pinimg.com/originals/59/bf/96/59bf96fde108d05bbaa2f096de0934d5.gif");
+}
+
+.homeBannerContent {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+
+.homeBannerContent h1 {
+    font-size:9em;
+    font-family: 'Press Start 2P', cursive;
+    text-shadow: 4px 4px rgb(10, 0, 36);
 }
 
 .landingWelcome {
