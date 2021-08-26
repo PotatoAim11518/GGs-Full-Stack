@@ -10,7 +10,7 @@ body {
     display: flex;
     background-color: #293241ff;
     justify-content: space-around;
-    height: 85vh;
+    min-height: 95vh;
     background-size: cover;
     background-repeat: no-repeat;
     background-image: url("https://i.pinimg.com/originals/9a/58/c3/9a58c343701abc80f7e1d5ec4142ab4d.gif");
