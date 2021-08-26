@@ -195,6 +195,11 @@ a.trending-game>img:hover{
     width: 2.5em;
 }
 
+.linkThumbnail:hover {
+    transition: .5s;
+    filter: brightness(1) invert(1);
+}
+
 .linkInfo{
     height: 2.5em;
     width: 2.5em;
