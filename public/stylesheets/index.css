@@ -151,3 +151,54 @@ a.trending-game>img:hover{
     color: #e0fbfcff;
     transition: 0.4s ease;
     }
+
+
+/* footer */
+
+.aboutSectionTitle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2em;
+    font-size: 2em;
+    color: aliceblue;
+    font-family: 'Press Start 2P', cursive;
+    text-shadow: 4px 4px rgb(10, 0, 36);
+}
+
+.aboutInfoContainer {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: row;
+}
+
+.aboutName {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1em;
+    font-size: 1.5em;
+    color: aliceblue;
+    font-family: 'Press Start 2P', cursive;
+    text-shadow: 4px 4px rgb(10, 0, 36);
+}
+
+.aboutLinks {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+.linkThumbnail {
+    height: 2.5em;
+    width: 2.5em;
+}
+
+.linkInfo{
+    height: 2.5em;
+    width: 2.5em;
+    margin-left: 13px;
+    margin-right: 13px;
+    margin-bottom: 15px;
+}
