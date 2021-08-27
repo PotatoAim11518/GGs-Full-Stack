@@ -25,9 +25,9 @@ block content
         img(src=`${game3.imageSrc}` class="gameThumbnail")
   div.genreBox
     h2.genreHomeTitle Genres
-    each genre in genres
-      div
-        a(href=`/genres/${genre.id}` class="genre-hover") #{genre.genreName}
+    div.genresLinksContainer
+      each genre in genres
+          button(href=`/genres/${genre.id}` class="genreLink") #{genre.genreName}
   div.aboutSectionContainer
     h2.aboutSectionTitle GoodGames was a collaboration by:
     div.aboutInfoContainer

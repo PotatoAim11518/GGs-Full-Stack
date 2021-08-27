@@ -57,7 +57,9 @@ body {
 .genreHomeTitle{
     font-weight: bold;
     font-size: 1.5rem;
-    color: #293241ff ;
+    color: #293241ff;
+    padding-bottom: 1em;
+    font-family: 'Press Start 2P', cursive;
 }
 
 div.trendingBox {
@@ -65,7 +67,7 @@ div.trendingBox {
     justify-content: space-around;
     background-color: #3d5a80ff;
     max-height: 500px;
-    padding: 10px;
+    padding: 20px;
     /* width:auto; */
     /* padding-bottom: 10px; */
 }
@@ -100,7 +102,7 @@ a.trendingGame>img.gameThumbnail:hover {
 }
 
 .trend{
-    padding: 10px;
+    padding: 15px;
     display:flex;
     align-items: center;
     flex-direction: column;
@@ -109,6 +111,7 @@ a.trendingGame>img.gameThumbnail:hover {
     justify-content: space-between;
     background-color: #3d5a80ff;
     color: #e0fbfcff;
+    font-family: 'Press Start 2P', cursive;
 }
 
 .genreBox{
@@ -116,12 +119,9 @@ a.trendingGame>img.gameThumbnail:hover {
     align-items: center;
     flex-direction: column;
     background-color: #98c1d9ff;
+    padding: 30px;
 
 }
-
-
-
-/* Fade in Effect down here */
 
 #trendingGame1 {
     animation: transitionIn 1s;
@@ -144,13 +144,27 @@ a.trendingGame>img.gameThumbnail:hover {
     }
 }
 
-.genre-hover {
-    color: #293241ff ;
+.genreslinksContainer {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: row;
 }
-.genre-hover:hover{
+
+.genreLink {
     background-color: #293241ff ;
     color: #e0fbfcff;
+    border: none;
     transition: 0.4s ease;
+    border-radius: 16px;
+    text-decoration: none;
+    padding: 10px;
+    margin: 20px;
+}
+.genreLink:hover{
+    color: #293241ff ;
+    background-color: #98c1d9ff;
+    text-decoration: underline;
     }
 
 
