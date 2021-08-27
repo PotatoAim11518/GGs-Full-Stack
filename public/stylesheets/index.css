@@ -76,26 +76,27 @@ div.trendingBox {
     /* margin: 0px 0px 10px 0px; */
 }
 
-a.trending-game>img{
-    max-height: 450px;
-    width: auto;
+
+a.trendingGame>img.gameThumbnail {
+    position: relative;
+    max-width: 15rem;
+    min-width: 15rem;
+    background-color: rgb(21, 26, 34);
+    max-height: 15rem;
+    min-height: 15rem;
+    object-fit: contain;
     margin: 10px;
-    /* width: auto; */
-    /* max-height: 350px; */
-    /* width: 90%; */
-    /* margin: 20px; */
-    /* position: relative; */
-    /* top: 0; */
-    /* left: 0; */
-    /* transition: width 1s, height 1s, left 1s, margin 1s; */
+    /* border-radius: 8px; */
+    animation: transitionIn 1s;
+    box-shadow: 0px 0px 0px 0px rgb(20, 20, 20);
+    transition: color 0.3s, background-color 0.3s , box-shadow 0.3s, transform 0.3s;
 }
 
-a.trending-game>img:hover{
-    /* box-shadow:0 4px 8px 0 rgba(0, 0, 0, 0.534); */
-    /* width: 95%; */
-    /* transition: 0.4s ease; */
-    /* margin: -15px; */
-
+a.trendingGame>img.gameThumbnail:hover {
+    background-color: #ee6c4dff;
+    box-shadow: -1px 1px 5px 5px rgb(20, 20, 20);
+    transform: scale(1.07);
+    transition: color 0.3s, background-color 0.3s , box-shadow 0.3s, transform 0.3s;
 }
 
 .trend{

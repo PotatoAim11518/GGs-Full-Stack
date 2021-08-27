@@ -14,14 +14,14 @@ block content
       h1.landingWelcome GoodGames
   h2.trend Trending Games
   div.trendingBox
-    .gameThumbnail
-      a.trending-game(href=`/games/${game1.id}/reviews`)
+    div.trendingGameThumbnail
+      a.trendingGame(href=`/games/${game1.id}/reviews`)
         img(src=`${game1.imageSrc}` class='gameThumbnail')
-    .gameThumbnail
-      a.trending-game(href=`/games/${game2.id}/reviews` class='gameThumbnail')
+    div.trendingGameThumbnail
+      a.trendingGame(href=`/games/${game2.id}/reviews` class='gameThumbnail')
         img(src=`${game2.imageSrc}` class="gameThumbnail")
-    .gameThumbnail
-      a.trending-game(href=`/games/${game3.id}/reviews` class='gameThumbnail')
+    div.trendingGameThumbnail
+      a.trendingGame(href=`/games/${game3.id}/reviews` class='gameThumbnail')
         img(src=`${game3.imageSrc}` class="gameThumbnail")
   div.genreBox
     h2.genreHomeTitle Genres
