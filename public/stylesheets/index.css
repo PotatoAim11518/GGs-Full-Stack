@@ -79,11 +79,11 @@ div.trendingBox {
 
 a.trendingGame>img.gameThumbnail {
     position: relative;
-    max-width: 15rem;
-    min-width: 15rem;
+    max-width: 22em;
+    min-width: 22em;
     background-color: rgb(21, 26, 34);
-    max-height: 15rem;
-    min-height: 15rem;
+    max-height: 22em;
+    min-height: 22em;
     object-fit: contain;
     margin: 10px;
     /* border-radius: 8px; */
