@@ -207,6 +207,7 @@ h1 {
 
 .autocom-box a {
   text-decoration: none;
+  pointer-events: auto;
 }
 
 .search-input.active .autocom-box li{
@@ -216,5 +217,6 @@ h1 {
 
 .autocom-box li:hover{
   background: #efefef;
+  pointer-events: none;
 }
 
