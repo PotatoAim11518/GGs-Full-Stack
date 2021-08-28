@@ -1,28 +1,66 @@
 extends layout.pug
 
 append head
-  title Good Games
+  title GoodGames
   link(rel="stylesheet" href="/stylesheets/index.css")
+  link(rel="preconnect" href="https://fonts.googleapis.com")
+  link(rel="preconnect" href="https://fonts.gstatic.com" crossorigin)
+  link(href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet")
   script(src="/javascripts/index.js" type="module" defer)
 
 block content
   div.home-banner
-    img#subLogo1(src="/logo.png")
-    h1.landingWelcome= title
-    img#subLogo2(src="/logo.png")
+    div.homeBannerContent
+      h1.landingWelcome GoodGames
   h2.trend Trending Games
   div.trendingBox
-    .trendingBox__card
-      a.trending-game(href=`/games/${game1.id}/reviews` id="trendingGame1")
-        img(src=`${game1.imageSrc}`)
-    .trendingBox__card
-      a.trending-game(href=`/games/${game2.id}/reviews` id="trendingGame2")
-        img(src=`${game2.imageSrc}`)
-    .trendingBox__card
-      a.trending-game(href=`/games/${game3.id}/reviews` id="trendingGame2")
-        img(src=`${game3.imageSrc}`)
+    div.trendingGameThumbnail
+      a.trendingGame(href=`/games/${game1.id}/reviews`)
+        img(src=`${game1.imageSrc}` class='gameThumbnail')
+    div.trendingGameThumbnail
+      a.trendingGame(href=`/games/${game2.id}/reviews` class='gameThumbnail')
+        img(src=`${game2.imageSrc}` class="gameThumbnail")
+    div.trendingGameThumbnail
+      a.trendingGame(href=`/games/${game3.id}/reviews` class='gameThumbnail')
+        img(src=`${game3.imageSrc}` class="gameThumbnail")
   div.genreBox
     h2.genreHomeTitle Genres
-    each genre in genres
-      div
-        a(href=`/genres/${genre.id}` class="genre-hover") #{genre.genreName}
+    div.genresLinksContainer
+      each genre in genres
+          button(href=`/genres/${genre.id}` class="genreLink") #{genre.genreName}
+  div.aboutSectionContainer
+    h2.aboutSectionTitle GoodGames was a collaboration by:
+    div.aboutInfoContainer
+      div.aboutLinksAnthony
+        h3.aboutName Anthony Martin
+        div.aboutLinks
+          a.linkInfo(href=`https://www.linkedin.com/in/anthonyamartin/` target='blank')
+              img(src=`https://cdn3.iconfinder.com/data/icons/free-social-icons/67/linkedin_circle_black-512.png` class="linkThumbnail")
+          a.linkInfo(href=`https://github.com/anthonym313` target='blank')
+              img(src=`https://image.flaticon.com/icons/png/512/25/25231.png` class="linkThumbnail")
+          a.linkInfo(href=`https://angel.co/u/anthony-martin-37` target='blank')
+              img(src=`https://cdn0.iconfinder.com/data/icons/picons-social/57/69-angellist-2-512.png` class="linkThumbnail")
+          a.linkInfo(href=`https://anthonym313.github.io/` target='blank')
+              img(src=`https://cdn4.iconfinder.com/data/icons/software-line/32/software-line-02-512.png` class="linkThumbnail")
+      div.aboutLinksTony
+        h3.aboutName Tony Costanza
+        div.aboutLinks
+          a.linkInfo(href=`https://www.linkedin.com/in/anthony-costanza-64952820a/` target='blank')
+              img(src=`https://cdn3.iconfinder.com/data/icons/free-social-icons/67/linkedin_circle_black-512.png` class="linkThumbnail")
+          a.linkInfo(href=`https://github.com/AnthonyCost` target='blank')
+              img(src=`https://image.flaticon.com/icons/png/512/25/25231.png` class="linkThumbnail")
+          a.linkInfo(href=`https://angel.co/u/anthony-costanza-1` target='blank')
+              img(src=`https://cdn0.iconfinder.com/data/icons/picons-social/57/69-angellist-2-512.png` class="linkThumbnail")
+          a.linkInfo(href=`https://www.anthonycostanza.dev/` target='blank')
+              img(src=`https://cdn4.iconfinder.com/data/icons/software-line/32/software-line-02-512.png` class="linkThumbnail")
+      div.aboutLinksWilson
+        h3.aboutName Wilson Huang
+        div.aboutLinks
+          a.linkInfo(href=`https://www.linkedin.com/in/wilson-huang-39198039/` target='blank')
+              img(src=`https://cdn3.iconfinder.com/data/icons/free-social-icons/67/linkedin_circle_black-512.png` class="linkThumbnail")
+          a.linkInfo(href=`https://github.com/PotatoAim11518` target='blank')
+              img(src=`https://image.flaticon.com/icons/png/512/25/25231.png` class="linkThumbnail")
+          a.linkInfo(href=`https://angel.co/u/wilson-huang-15` target='blank')
+              img(src=`https://cdn0.iconfinder.com/data/icons/picons-social/57/69-angellist-2-512.png` class="linkThumbnail")
+          a.linkInfo(href=`https://potatoaim11518.github.io/portfolio/#aboutme` target='blank')
+              img(src=`https://cdn4.iconfinder.com/data/icons/software-line/32/software-line-02-512.png` class="linkThumbnail")

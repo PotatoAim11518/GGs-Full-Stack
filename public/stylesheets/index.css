@@ -10,6 +10,25 @@ body {
     display: flex;
     background-color: #293241ff;
     justify-content: space-around;
+    min-height: 95vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-image: url("https://i.pinimg.com/originals/9a/58/c3/9a58c343701abc80f7e1d5ec4142ab4d.gif");
+}
+
+.homeBannerContent {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+
+.homeBannerContent h1 {
+    font-size:8em;
+    color: aliceblue;
+    font-family: 'Press Start 2P', cursive;
+    text-shadow: 4px 4px rgb(10, 0, 36);
 }
 
 .landingWelcome {
@@ -38,7 +57,9 @@ body {
 .genreHomeTitle{
     font-weight: bold;
     font-size: 1.5rem;
-    color: #293241ff ;
+    color: #293241ff;
+    padding-bottom: 1em;
+    font-family: 'Press Start 2P', cursive;
 }
 
 div.trendingBox {
@@ -46,7 +67,7 @@ div.trendingBox {
     justify-content: space-around;
     background-color: #3d5a80ff;
     max-height: 500px;
-    padding: 10px;
+    padding: 20px;
     /* width:auto; */
     /* padding-bottom: 10px; */
 }
@@ -57,30 +78,31 @@ div.trendingBox {
     /* margin: 0px 0px 10px 0px; */
 }
 
-a.trending-game>img{
-    max-height: 450px;
-    width: auto;
+
+a.trendingGame>img.gameThumbnail {
+    position: relative;
+    max-width: 22em;
+    min-width: 22em;
+    background-color: rgb(21, 26, 34);
+    max-height: 22em;
+    min-height: 22em;
+    object-fit: contain;
     margin: 10px;
-    /* width: auto; */
-    /* max-height: 350px; */
-    /* width: 90%; */
-    /* margin: 20px; */
-    /* position: relative; */
-    /* top: 0; */
-    /* left: 0; */
-    /* transition: width 1s, height 1s, left 1s, margin 1s; */
+    /* border-radius: 8px; */
+    animation: transitionIn 1s;
+    box-shadow: 0px 0px 0px 0px rgb(20, 20, 20);
+    transition: color 0.3s, background-color 0.3s , box-shadow 0.3s, transform 0.3s;
 }
 
-a.trending-game>img:hover{
-    /* box-shadow:0 4px 8px 0 rgba(0, 0, 0, 0.534); */
-    /* width: 95%; */
-    /* transition: 0.4s ease; */
-    /* margin: -15px; */
-
+a.trendingGame>img.gameThumbnail:hover {
+    background-color: #ee6c4dff;
+    box-shadow: -1px 1px 5px 5px rgb(20, 20, 20);
+    transform: scale(1.07);
+    transition: color 0.3s, background-color 0.3s , box-shadow 0.3s, transform 0.3s;
 }
 
 .trend{
-    padding: 10px;
+    padding: 15px;
     display:flex;
     align-items: center;
     flex-direction: column;
@@ -89,6 +111,7 @@ a.trending-game>img:hover{
     justify-content: space-between;
     background-color: #3d5a80ff;
     color: #e0fbfcff;
+    font-family: 'Press Start 2P', cursive;
 }
 
 .genreBox{
@@ -96,12 +119,9 @@ a.trending-game>img:hover{
     align-items: center;
     flex-direction: column;
     background-color: #98c1d9ff;
+    padding: 30px;
 
 }
-
-
-
-/* Fade in Effect down here */
 
 #trendingGame1 {
     animation: transitionIn 1s;
@@ -124,11 +144,81 @@ a.trending-game>img:hover{
     }
 }
 
-.genre-hover {
-    color: #293241ff ;
+.genreslinksContainer {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: row;
 }
-.genre-hover:hover{
+
+.genreLink {
     background-color: #293241ff ;
     color: #e0fbfcff;
+    border: none;
     transition: 0.4s ease;
+    border-radius: 16px;
+    text-decoration: none;
+    padding: 10px;
+    margin: 20px;
+}
+.genreLink:hover{
+    color: #293241ff ;
+    background-color: #98c1d9ff;
+    text-decoration: underline;
     }
+
+
+/* footer */
+
+.aboutSectionTitle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2em;
+    font-size: 2em;
+    color: aliceblue;
+    font-family: 'Press Start 2P', cursive;
+    text-shadow: 4px 4px rgb(10, 0, 36);
+}
+
+.aboutInfoContainer {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: row;
+}
+
+.aboutName {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1em;
+    font-size: 1.5em;
+    color: aliceblue;
+    font-family: 'Press Start 2P', cursive;
+    text-shadow: 4px 4px rgb(10, 0, 36);
+}
+
+.aboutLinks {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+.linkThumbnail {
+    height: 2.5em;
+    width: 2.5em;
+}
+
+.linkThumbnail:hover {
+    transition: .5s;
+    filter: brightness(1) invert(1);
+}
+
+.linkInfo{
+    height: 2.5em;
+    width: 2.5em;
+    margin-left: 13px;
+    margin-right: 13px;
+    margin-bottom: 15px;
+}
