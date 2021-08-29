@@ -13,9 +13,18 @@ Good Games is social game cataloging application where users come to share video
 
 ## App Features
 ### Homepage
-Start putting gifs and images here.
+![image](./public/assets/goodGamesSplash.gif)
 
+### Cataloging
+- Selection by all games, genres, or publishers.
 
+![image](./public/assets/allGames-static.jpg)
+
+### Individual Game Information and Reviews
+![image](./public/assets/gameAndReviewGgs.gif)
+
+### Search
+![image](./public/assets/ggsFilteredSearch.gif)
 
 ## [Wiki Pages](https://github.com/PotatoAim11518/GGs-Full-Stack/wiki)
 1. [Feature List](https://github.com/PotatoAim11518/GGs-Full-Stack/wiki/MVP-Feature-List)
