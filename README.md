@@ -13,7 +13,10 @@ Good Games is social game cataloging application where users come to share video
 
 ## App Features
 ### Homepage
-Start putting gifs and images here.
+![image](./public/assets/goodGamesSplash.gif)
+
+### Search
+![image](./public/assets/ggsFilteredSearch.gif)
 
 
 
