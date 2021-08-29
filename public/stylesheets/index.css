@@ -160,6 +160,7 @@ a.trendingGame>img.gameThumbnail:hover {
     text-decoration: none;
     padding: 10px;
     margin: 20px;
+    font-size: .85rem;
 }
 .genreLink:hover{
     color: #293241ff ;
