@@ -27,7 +27,7 @@ block content
     h2.genreHomeTitle Genres
     div.genresLinksContainer
       each genre in genres
-          button(href=`/genres/${genre.id}` class="genreLink") #{genre.genreName}
+          a(href=`/genres/${genre.id}` class="genreLink") #{genre.genreName}
   div.aboutSectionContainer
     h2.aboutSectionTitle GoodGames was a collaboration by:
     div.aboutInfoContainer
